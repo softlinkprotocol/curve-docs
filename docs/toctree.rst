@@ -7,7 +7,6 @@ Curve
 
     Introduction <index.rst>
 
-
 .. toctree::
     :maxdepth: 2
     :caption: Registry
@@ -18,7 +17,6 @@ Curve
     Pool Info: Aggregated Getters <registry-pool-info.rst>
     Exchanges <registry-exchanges.rst>
 
-
 .. toctree::
     :maxdepth: 2
     :caption: Metapool Factory
@@ -28,9 +26,14 @@ Curve
     Pools <factory-pools.rst>
     Deposit Contracts <factory-deposits.rst>
 
-
 .. toctree::
     :maxdepth: 2
     :caption: Cross Asset Swaps
 
     Overview <cross-asset-swaps.rst>
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Addresses
+
+    Overview <addresses-overview.rst>

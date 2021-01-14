@@ -3,7 +3,6 @@
     :alt: Curve
     :align: center
 
-
 =====
 Curve
 =====

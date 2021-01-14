@@ -9,23 +9,53 @@ Here is a list of all current contract deployments within the Curve protocol.
 Mainnet Contracts
 =================
 
-Base Pools
-----------
-
-For each base pool there exist multiple deployed contracts:
+Note that for a single base and meta pool there are multiple deployed contracts, which are of the following formats:
 
 - ``StableSwap<pool>.vy``: Curve stablecoin AMM contract
-- ``Deposit<pool>.vy``: contract used to wrap underlying tokens prior to depositing them into the pool
+- ``Deposit<pool>.vy``: contract used to wrap underlying tokens prior to depositing them into the pool (not always required)
 - ``CurveContract<version>.vy``: LP token contract for the pool
 
+
+Base Pools
+----------
 
 .. csv-table::
    :header: "Pool", "Source", "Address"
 
+   3Pool, `StableSwap3Pool.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/3pool/StableSwap3Pool.vy>`_, `0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7 <https://etherscan.io/address/0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7#code>`_
+   3Pool, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490 <https://etherscan.io/address/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490#code>`_
+   AAVE, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900 <https://etherscan.io/address/0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900#code>`_
+   AAVE, `StableSwapAave.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/aave/StableSwapAave.vy>`_, `0xDeBF20617708857ebe4F679508E7b7863a8A8EeE <https://etherscan.io/address/0xDeBF20617708857ebe4F679508E7b7863a8A8EeE#code>`_
+   BUSD, `StableSwapBUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/busd/StableSwapBUSD.vy>`_, `0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27 <https://etherscan.io/address/0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27#code>`_
+   BUSD, `DepositBUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/busd/DepositBUSD.vy>`_, `0xb6c057591e073249f2d9d88ba59a46cfc9b59edb <https://etherscan.io/address/0xb6c057591e073249f2d9d88ba59a46cfc9b59edb#code>`_
+   BUSD, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B <https://etherscan.io/address/0x3B3Ac5386837Dc563660FB6a0937DFAa5924333B#code>`_
    Compound, `StableSwapCompound.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/compound/StableSwapCompound.vy>`_, `0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56 <https://etherscan.io/address/0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56#code>`_
    Compound, `DepositCompound.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/compound/DepositCompound.vy>`_, `0xeb21209ae4c2c9ff2a86aca31e123764a3b6bc06 <https://etherscan.io/address/0xeb21209ae4c2c9ff2a86aca31e123764a3b6bc06#code>`_
    Compound, `CurveContractV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2 <https://etherscan.io/address/0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2#code>`_
-
+   EURS, `StableSwapEURS.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/eurs/StableSwapEURS.vy>`_, `0x0Ce6a5fF5217e38315f87032CF90686C96627CAA <https://etherscan.io/address/0x0Ce6a5fF5217e38315f87032CF90686C96627CAA#code>`_
+   EURS, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x194eBd173F6cDacE046C53eACcE9B953F28411d1 <https://etherscan.io/address/0x194eBd173F6cDacE046C53eACcE9B953F28411d1#code>`_
+   hBTC, `StableSwapHBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/hbtc/StableSwapHBTC.vy>`_, `0x4CA9b3063Ec5866A4B82E437059D2C43d1be596F <https://etherscan.io/address/0x4CA9b3063Ec5866A4B82E437059D2C43d1be596F#code>`_
+   hBTC, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0xb19059ebb43466C323583928285a49f558E572Fd <https://etherscan.io/address/0xb19059ebb43466C323583928285a49f558E572Fd#code>`_
+   PAX, `DepositPax.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/pax/DepositPax.vy>`_, `0xa50ccc70b6a011cffddf45057e39679379187287 <https://etherscan.io/address/0xa50ccc70b6a011cffddf45057e39679379187287#code>`_
+   PAX, `StableSwapPax.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/pax/StableSwapPax.vy>`_, `0x06364f10B501e868329afBc005b3492902d6C763 <https://etherscan.io/address/0x06364f10B501e868329afBc005b3492902d6C763#code>`_
+   PAX, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0xD905e2eaeBe188fc92179b6350807D8bd91Db0D8 <https://etherscan.io/address/0xD905e2eaeBe188fc92179b6350807D8bd91Db0D8#code>`_
+   renBTC, `StableSwapRen.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/ren/StableSwapRen.vy>`_, `0x93054188d876f558f4a66B2EF1d97d16eDf0895B <https://etherscan.io/address/0x93054188d876f558f4a66B2EF1d97d16eDf0895B#code>`_
+   renBTC, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0x49849C98ae39Fff122806C06791Fa73784FB3675 <https://etherscan.io/address/0x49849C98ae39Fff122806C06791Fa73784FB3675#code>`_
+   sBTC, `StableSwapSBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/sbtc/StableSwapSBTC.vy>`_, `0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3 <https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3#code>`_
+   sBTC, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714 <https://etherscan.io/address/0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714#code>`_
+   sETH, `StableSwapSETH.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/seth/StableSwapSETH.vy>`_, `0xc5424b857f758e906013f3555dad202e4bdb4567 <https://etherscan.io/address/0xc5424b857f758e906013f3555dad202e4bdb4567#code>`_
+   sETH, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0xA3D87FffcE63B53E0d54fAa1cc983B7eB0b74A9c <https://etherscan.io/address/0xA3D87FffcE63B53E0d54fAa1cc983B7eB0b74A9c#code>`_
+   stETH, `StableSwapSTETH.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/steth/StableSwapSTETH.vy>`_, `0xDC24316b9AE028F1497c275EB9192a3Ea0f67022 <https://etherscan.io/address/0xDC24316b9AE028F1497c275EB9192a3Ea0f67022#code>`_
+   stETH, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x06325440D014e39736583c165C2963BA99fAf14E <https://etherscan.io/address/0x06325440D014e39736583c165C2963BA99fAf14E#code>`_
+   sUSD, `DepositSUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/susd/DepositSUSD.vy>`_, `0xfcba3e75865d2d561be8d220616520c171f12851 <https://etherscan.io/address/0xfcba3e75865d2d561be8d220616520c171f12851#code>`_
+   sUSD, `StableSwapSUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/susd/StableSwapSUSD.vy>`_, `0xA5407eAE9Ba41422680e2e00537571bcC53efBfD <https://etherscan.io/address/0xA5407eAE9Ba41422680e2e00537571bcC53efBfD#code>`_
+   sUSD, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0xC25a3A3b969415c80451098fa907EC722572917F <https://etherscan.io/address/0xC25a3A3b969415c80451098fa907EC722572917F#code>`_
+   USDT, `DepositUSDT.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/usdt/DepositUSDT.vy>`_, `0xac795d2c97e60df6a99ff1c814727302fd747a80 <https://etherscan.io/address/0xac795d2c97e60df6a99ff1c814727302fd747a80#code>`_
+   USDT, `StableSwapUSDT.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/usdt/StableSwapUSDT.vy>`_, `0x52EA46506B9CC5Ef470C5bf89f17Dc28bB35D85C <https://etherscan.io/address/0x52EA46506B9CC5Ef470C5bf89f17Dc28bB35D85C#code>`_
+   USDT, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0x9fC689CCaDa600B6DF723D9E47D84d76664a1F23 <https://etherscan.io/address/0x9fC689CCaDa600B6DF723D9E47D84d76664a1F23#code>`_
+   Y, `DepositY.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/y/DepositY.vy>`_, `0xbbc81d23ea2c3ec7e56d39296f0cbb648873a5d3 <https://etherscan.io/address/0xbbc81d23ea2c3ec7e56d39296f0cbb648873a5d3#code>`_
+   Y, `StableSwapY.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/y/StableSwapY.vy>`_, `0x45F783CCE6B7FF23B2ab2D70e416cdb7D6055f51 <https://etherscan.io/address/0x45F783CCE6B7FF23B2ab2D70e416cdb7D6055f51#code>`_
+   Y, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8 <https://etherscan.io/address/0xdF5e0e81Dff6FAF3A7e52BA697820c5e32D806A8#code>`_
 
 
 Meta Pools
@@ -34,7 +64,45 @@ Meta Pools
 .. csv-table:: 
    :header: "Pool", "Source", "Address"
 
+   bBTC, `StableSwapBBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/bbtc/StableSwapBBTC.vy>`_, `0x071c661B4DeefB59E2a3DdB20Db036821eeE8F4b <https://etherscan.io/address/0x071c661B4DeefB59E2a3DdB20Db036821eeE8F4b#code>`_
+   bBTC, `DepositBBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/bbtc/DepositBBTC.vy>`_, `0xC45b2EEe6e09cA176Ca3bB5f7eEe7C47bF93c756 <https://etherscan.io/address/0xC45b2EEe6e09cA176Ca3bB5f7eEe7C47bF93c756#code>`_
+   bBTC, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x410e3E86ef427e30B9235497143881f717d93c2A <https://etherscan.io/address/0x410e3E86ef427e30B9235497143881f717d93c2A#code>`_
+   DUSD, `DepositDUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/dusd/DepositDUSD.vy>`_, `0x61E10659fe3aa93d036d099405224E4Ac24996d0 <https://etherscan.io/address/0x61E10659fe3aa93d036d099405224E4Ac24996d0#code>`_
+   DUSD, `StableSwapDUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/dusd/StableSwapDUSD.vy>`_, `0x8038C01A0390a8c547446a0b2c18fc9aEFEcc10c <https://etherscan.io/address/0x8038C01A0390a8c547446a0b2c18fc9aEFEcc10c#code>`_
+   DUSD, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x3a664Ab939FD8482048609f652f9a0B0677337B9 <https://etherscan.io/address/0x3a664Ab939FD8482048609f652f9a0B0677337B9#code>`_
    GUSD, `StableSwapGUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/gusd/StableSwapGUSD.vy>`_, `0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956 <https://etherscan.io/address/0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956>`_
+   GUSD, `DepositGUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/gusd/DepositGUSD.vy>`_, `0x64448B78561690B70E17CBE8029a3e5c1bB7136e <https://etherscan.io/address/0x64448B78561690B70E17CBE8029a3e5c1bB7136e#code>`_
+   GUSD, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0xD2967f45c4f384DEEa880F807Be904762a3DeA07 <https://etherscan.io/address/0xD2967f45c4f384DEEa880F807Be904762a3DeA07#code>`_
+   HUSD, `DepositHUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/husd/DepositHUSD.vy>`_, `0x09672362833d8f703D5395ef3252D4Bfa51c15ca <https://etherscan.io/address/0x09672362833d8f703D5395ef3252D4Bfa51c15ca#code>`_
+   HUSD, `StableSwapHUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/husd/StableSwapHUSD.vy>`_, `0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604 <https://etherscan.io/address/0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604#code>`_
+   HUSD, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858 <https://etherscan.io/address/0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858#code>`_
+   LinkUSD, `DepositLinkUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/linkusd/DepositLinkUSD.vy>`_, `0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2 <https://etherscan.io/address/0x1de7f0866e2c4adAC7b457c58Cc25c8688CDa1f2#code>`_
+   LinkUSD, `StableSwapLinkUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/linkusd/StableSwapLinkUSD.vy>`_, `0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171 <https://etherscan.io/address/0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171#code>`_
+   LinkUSD, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x6D65b498cb23deAba52db31c93Da9BFFb340FB8F <https://etherscan.io/address/0x6D65b498cb23deAba52db31c93Da9BFFb340FB8F#code>`_
+   MUSD, `DepositMUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/musd/DepositMUSD.vy>`_, `0x803A2B40c5a9BB2B86DD630B274Fa2A9202874C2 <https://etherscan.io/address/0x803A2B40c5a9BB2B86DD630B274Fa2A9202874C2#code>`_
+   MUSD, `StableSwapMUSD.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/musd/StableSwapMUSD.vy>`_, `0x8474DdbE98F5aA3179B3B3F5942D724aFcdec9f6 <https://etherscan.io/address/0x8474DdbE98F5aA3179B3B3F5942D724aFcdec9f6#code>`_
+   MUSD, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x1AEf73d49Dedc4b1778d0706583995958Dc862e6 <https://etherscan.io/address/0x1AEf73d49Dedc4b1778d0706583995958Dc862e6#code>`_
+   oBTC, `DepositOBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/obtc/DepositOBTC.vy>`_, `0xd5BCf53e2C81e1991570f33Fa881c49EEa570C8D <https://etherscan.io/address/0xd5BCf53e2C81e1991570f33Fa881c49EEa570C8D#code>`_
+   oBTC, `StableSwapOBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/obtc/StableSwapOBTC.vy>`_, `0xd81dA8D904b52208541Bade1bD6595D8a251F8dd <https://etherscan.io/address/0xd81dA8D904b52208541Bade1bD6595D8a251F8dd#code>`_
+   oBTC, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x2fE94ea3d5d4a175184081439753DE15AeF9d614 <https://etherscan.io/address/0x2fE94ea3d5d4a175184081439753DE15AeF9d614#code>`_
+   pBTC, `DepositPBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/pbtc/DepositPBTC.vy>`_,`0x11F419AdAbbFF8d595E7d5b223eee3863Bb3902C <https://etherscan.io/address/0x11F419AdAbbFF8d595E7d5b223eee3863Bb3902C#code>`_
+   pBTC, `StableSwapPBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/pbtc/StableSwapPBTC.vy>`_, `0x7F55DDe206dbAD629C080068923b36fe9D6bDBeF <https://etherscan.io/address/0x7F55DDe206dbAD629C080068923b36fe9D6bDBeF#code>`_
+   pBTC, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0xDE5331AC4B3630f94853Ff322B66407e0D6331E8 <https://etherscan.io/address/0xDE5331AC4B3630f94853Ff322B66407e0D6331E8#code>`_
+   RSV, `DepositRSV.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/rsv/DepositRSV.vy>`_, `0xBE175115BF33E12348ff77CcfEE4726866A0Fbd5 <https://etherscan.io/address/0xBE175115BF33E12348ff77CcfEE4726866A0Fbd5#code>`_
+   RSV, `StableSwapRSV.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/rsv/StableSwapRSV.vy>`_, `0xC18cC39da8b11dA8c3541C598eE022258F9744da <https://etherscan.io/address/0xC18cC39da8b11dA8c3541C598eE022258F9744da#code>`_
+   RSV, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0xC2Ee6b0334C261ED60C72f6054450b61B8f18E35 <https://etherscan.io/address/0xC2Ee6b0334C261ED60C72f6054450b61B8f18E35#code>`_
+   tBTC, `DepositTBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/tbtc/DepositTBTC.vy>`_, `0xaa82ca713D94bBA7A89CEAB55314F9EfFEdDc78c <https://etherscan.io/address/0xaa82ca713D94bBA7A89CEAB55314F9EfFEdDc78c#code>`_
+   tBTC, `StableSwapTBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/tbtc/StableSwapTBTC.vy>`_, `0xC25099792E9349C7DD09759744ea681C7de2cb66 <https://etherscan.io/address/0xC25099792E9349C7DD09759744ea681C7de2cb66#code>`_
+   tBTC, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x64eda51d3Ad40D56b9dFc5554E06F94e1Dd786Fd <https://etherscan.io/address/0x64eda51d3Ad40D56b9dFc5554E06F94e1Dd786Fd#code>`_
+   USDK, `DepositUSDK.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/usdk/DepositUSDK.vy>`_, `0xF1f85a74AD6c64315F85af52d3d46bF715236ADc <https://etherscan.io/address/0xF1f85a74AD6c64315F85af52d3d46bF715236ADc#code>`_
+   USDK, `StableSwapUSDK.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/usdk/StableSwapUSDK.vy>`_, `0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb <https://etherscan.io/address/0x3E01dD8a5E1fb3481F0F589056b428Fc308AF0Fb#code>`_
+   USDK, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x97E2768e8E73511cA874545DC5Ff8067eB19B787 <https://etherscan.io/address/0x97E2768e8E73511cA874545DC5Ff8067eB19B787#code>`_
+   USDN, `DepositUSDN.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/usdn/DepositUSDN.vy>`_, `0x094d12e5b541784701FD8d65F11fc0598FBC6332 <https://etherscan.io/address/0x094d12e5b541784701FD8d65F11fc0598FBC6332#code>`_
+   USDN, `StableSwapUSDN.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/usdn/StableSwapUSDN.vy>`_, `0x0f9cb53Ebe405d49A0bbdBD291A65Ff571bC83e1 <https://etherscan.io/address/0x0f9cb53Ebe405d49A0bbdBD291A65Ff571bC83e1#code>`_
+   USDN, `CurveTokenV2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_, `0x4f3E8F405CF5aFC05D68142F3783bDfE13811522 <https://etherscan.io/address/0x4f3E8F405CF5aFC05D68142F3783bDfE13811522#code>`_
+   UST, `DepositUST.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/ust/DepositUST.vy>`_, `0xB0a0716841F2Fc03fbA72A891B8Bb13584F52F2d <https://etherscan.io/address/0xB0a0716841F2Fc03fbA72A891B8Bb13584F52F2d#code>`_
+   UST, `StableSwapUST.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/ust/StableSwapUST.vy>`_, `0x890f4e345B1dAED0367A877a1612f86A1f86985f <https://etherscan.io/address/0x890f4e345B1dAED0367A877a1612f86A1f86985f#code>`_
+   UST, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x94e131324b6054c0D789b190b2dAC504e4361b53 <https://etherscan.io/address/0x94e131324b6054c0D789b190b2dAC504e4361b53#code>`_
 
 
 Burners
@@ -47,7 +115,6 @@ Burners
    CBurner, `CBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/CBurner.vy>`_, `0x55858AdaBb9EA24dDd0678DB0E9b41D8bD48e7EE <https://etherscan.io/address/0x55858AdaBb9EA24dDd0678DB0E9b41D8bD48e7EE#code>`_
    ETHBurner, `ETHBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ETHBurner.vy>`_, `0xD782EbD4bAbd95c2D8255112eFc6DD865c849394 <https://etherscan.io/address/0xD782EbD4bAbd95c2D8255112eFc6DD865c849394#code>`_
    EuroBurner, `EuroBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/EuroBurner.vy>`_, `0x3a16b6001201577CC67bDD8aAE5A105bbB035882 <https://etherscan.io/address/0x3a16b6001201577CC67bDD8aAE5A105bbB035882#code>`_
-   IdleBurner, `IdleBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/IdleBurner.vy>`_, `0xd1EBEf836f25047bB6AaC2DCD8618Efe2DC17D67 <https://etherscan.io/address/0xd1EBEf836f25047bB6AaC2DCD8618Efe2DC17D67#code>`_
    LPBurner, `LPBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/LPBurner.vy>`_, `0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81 <https://etherscan.io/address/0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81#code>`_
    MetaBurner, `MetaBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/MetaBurner.vy>`_, `0xE4b65889469ad896e866331f0AB5652C1EcfB3E6 <https://etherscan.io/address/0xE4b65889469ad896e866331f0AB5652C1EcfB3E6#code>`_
    USDNBurner, `USDNBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/USDNBurner.vy>`_, `0x06534b0BF7Ff378F162d4F348390BDA53b15fA35 <https://etherscan.io/address/0x06534b0BF7Ff378F162d4F348390BDA53b15fA35#code>`_
@@ -60,32 +127,32 @@ Liquidity Gauges
 .. csv-table::
    :header: "Gauge", "Source", "Address"
    
-   3pool, `LiquidityGauge.sol <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A <https://etherscan.io/address/0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A#code>`_,
-   aave, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0xd662908ADA2Ea1916B3318327A97eB18aD588b5d <https://etherscan.io/address/0xd662908ADA2Ea1916B3318327A97eB18aD588b5d#code>`_,
-   bbtc, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE <https://etherscan.io/address/0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE#code>`_,
-   bUSD, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x69Fb7c45726cfE2baDeE8317005d3F94bE838840 <https://etherscan.io/address/0x69Fb7c45726cfE2baDeE8317005d3F94bE838840#code>`_,
-   Compound, `LiquidityGauge.sol <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x7ca5b0a2910B33e9759DC7dDB0413949071D7575 <https://etherscan.io/address/0x7ca5b0a2910B33e9759DC7dDB0413949071D7575#code>`_,
-   dusd, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0xAEA6c312f4b3E04D752946d329693F7293bC2e6D <https://etherscan.io/address/0xAEA6c312f4b3E04D752946d329693F7293bC2e6D#code>`_,
-   eurs, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x90Bb609649E0451E5aD952683D64BD2d1f245840 <https://etherscan.io/address/0x90Bb609649E0451E5aD952683D64BD2d1f245840#code>`_,
-   gusd, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xC5cfaDA84E902aD92DD40194f0883ad49639b023 <https://etherscan.io/address/0xC5cfaDA84E902aD92DD40194f0883ad49639b023#code>`_,
-   hbtc, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x4c18E409Dc8619bFb6a1cB56D114C3f592E0aE79 <https://etherscan.io/address/0x4c18E409Dc8619bFb6a1cB56D114C3f592E0aE79#code>`_,
-   husd, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x2db0E83599a91b508Ac268a6197b8B14F5e72840 <https://etherscan.io/address/0x2db0E83599a91b508Ac268a6197b8B14F5e72840#code>`_,
-   musd, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x5f626c30EC1215f4EdCc9982265E8b1F411D1352 <https://etherscan.io/address/0x5f626c30EC1215f4EdCc9982265E8b1F411D1352#code>`_,
-   obtc, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x11137B10C210b579405c21A07489e28F3c040AB1 <https://etherscan.io/address/0x11137B10C210b579405c21A07489e28F3c040AB1#code>`_,
-   PAX, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x64E3C23bfc40722d3B649844055F1D51c1ac041d <https://etherscan.io/address/0x64E3C23bfc40722d3B649844055F1D51c1ac041d#code>`_,
-   pbtc, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416 <https://etherscan.io/address/0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416#code>`_,
-   renBTC, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xB1F2cdeC61db658F091671F5f199635aEF202CAC <https://etherscan.io/address/0xB1F2cdeC61db658F091671F5f199635aEF202CAC#code>`_,
-   rsv, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x4dC4A289a8E33600D8bD4cf5F6313E43a37adec7 <https://etherscan.io/address/0x4dC4A289a8E33600D8bD4cf5F6313E43a37adec7#code>`_,
-   sbtc, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x705350c4BcD35c9441419DdD5d2f097d7a55410F <https://etherscan.io/address/0x705350c4BcD35c9441419DdD5d2f097d7a55410F#code>`_,
-   seth, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x3C0FFFF15EA30C35d7A85B85c0782D6c94e1d238 <https://etherscan.io/address/0x3C0FFFF15EA30C35d7A85B85c0782D6c94e1d238#code>`_,
-   steth, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x182B723a58739a9c974cFDB385ceaDb237453c28 <https://etherscan.io/address/0x182B723a58739a9c974cFDB385ceaDb237453c28#code>`_,
-   susdv2, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0xA90996896660DEcC6E997655E065b23788857849 <https://etherscan.io/address/0xA90996896660DEcC6E997655E065b23788857849#code>`_,
-   tbtc, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x6828bcF74279eE32f2723eC536c22c51Eed383C6 <https://etherscan.io/address/0x6828bcF74279eE32f2723eC536c22c51Eed383C6#code>`_,
-   usdk, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xC2b1DF84112619D190193E48148000e3990Bf627 <https://etherscan.io/address/0xC2b1DF84112619D190193E48148000e3990Bf627#code>`_,
-   usdn, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xF98450B5602fa59CC66e1379DFfB6FDDc724CfC4 <https://etherscan.io/address/0xF98450B5602fa59CC66e1379DFfB6FDDc724CfC4#code>`_,
-   USDT, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xBC89cd85491d81C6AD2954E6d0362Ee29fCa8F53 <https://etherscan.io/address/0xBC89cd85491d81C6AD2954E6d0362Ee29fCa8F53#code>`_,
-   ust, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x3B7020743Bc2A4ca9EaF9D0722d42E20d6935855 <https://etherscan.io/address/0x3B7020743Bc2A4ca9EaF9D0722d42E20d6935855#code>`_,
-   Y, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1 <https://etherscan.io/address/0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1#code>`_,
+   3pool, `LiquidityGauge.sol <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A <https://etherscan.io/address/0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A#code>`_
+   AAVE, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0xd662908ADA2Ea1916B3318327A97eB18aD588b5d <https://etherscan.io/address/0xd662908ADA2Ea1916B3318327A97eB18aD588b5d#code>`_
+   bBTC, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE <https://etherscan.io/address/0xdFc7AdFa664b08767b735dE28f9E84cd30492aeE#code>`_
+   BUSD, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x69Fb7c45726cfE2baDeE8317005d3F94bE838840 <https://etherscan.io/address/0x69Fb7c45726cfE2baDeE8317005d3F94bE838840#code>`_
+   Compound, `LiquidityGauge.sol <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x7ca5b0a2910B33e9759DC7dDB0413949071D7575 <https://etherscan.io/address/0x7ca5b0a2910B33e9759DC7dDB0413949071D7575#code>`_
+   DUSD, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0xAEA6c312f4b3E04D752946d329693F7293bC2e6D <https://etherscan.io/address/0xAEA6c312f4b3E04D752946d329693F7293bC2e6D#code>`_
+   EURS, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x90Bb609649E0451E5aD952683D64BD2d1f245840 <https://etherscan.io/address/0x90Bb609649E0451E5aD952683D64BD2d1f245840#code>`_
+   GUSD, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xC5cfaDA84E902aD92DD40194f0883ad49639b023 <https://etherscan.io/address/0xC5cfaDA84E902aD92DD40194f0883ad49639b023#code>`_
+   hBTC, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x4c18E409Dc8619bFb6a1cB56D114C3f592E0aE79 <https://etherscan.io/address/0x4c18E409Dc8619bFb6a1cB56D114C3f592E0aE79#code>`_
+   HUSD, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x2db0E83599a91b508Ac268a6197b8B14F5e72840 <https://etherscan.io/address/0x2db0E83599a91b508Ac268a6197b8B14F5e72840#code>`_
+   MUSD, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x5f626c30EC1215f4EdCc9982265E8b1F411D1352 <https://etherscan.io/address/0x5f626c30EC1215f4EdCc9982265E8b1F411D1352#code>`_
+   oBTC, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x11137B10C210b579405c21A07489e28F3c040AB1 <https://etherscan.io/address/0x11137B10C210b579405c21A07489e28F3c040AB1#code>`_
+   PAX, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0x64E3C23bfc40722d3B649844055F1D51c1ac041d <https://etherscan.io/address/0x64E3C23bfc40722d3B649844055F1D51c1ac041d#code>`_
+   pBTC, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416 <https://etherscan.io/address/0xd7d147c6Bb90A718c3De8C0568F9B560C79fa416#code>`_
+   renBTC, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xB1F2cdeC61db658F091671F5f199635aEF202CAC <https://etherscan.io/address/0xB1F2cdeC61db658F091671F5f199635aEF202CAC#code>`_
+   RSV, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x4dC4A289a8E33600D8bD4cf5F6313E43a37adec7 <https://etherscan.io/address/0x4dC4A289a8E33600D8bD4cf5F6313E43a37adec7#code>`_
+   sBTC, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x705350c4BcD35c9441419DdD5d2f097d7a55410F <https://etherscan.io/address/0x705350c4BcD35c9441419DdD5d2f097d7a55410F#code>`_
+   sETH, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x3C0FFFF15EA30C35d7A85B85c0782D6c94e1d238 <https://etherscan.io/address/0x3C0FFFF15EA30C35d7A85B85c0782D6c94e1d238#code>`_
+   stETH, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x182B723a58739a9c974cFDB385ceaDb237453c28 <https://etherscan.io/address/0x182B723a58739a9c974cFDB385ceaDb237453c28#code>`_
+   sUSDv2, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0xA90996896660DEcC6E997655E065b23788857849 <https://etherscan.io/address/0xA90996896660DEcC6E997655E065b23788857849#code>`_
+   tBTC, `LiquidityGaugeReward.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGaugeReward.vy>`_, `0x6828bcF74279eE32f2723eC536c22c51Eed383C6 <https://etherscan.io/address/0x6828bcF74279eE32f2723eC536c22c51Eed383C6#code>`_
+   USDK, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xC2b1DF84112619D190193E48148000e3990Bf627 <https://etherscan.io/address/0xC2b1DF84112619D190193E48148000e3990Bf627#code>`_
+   USDN, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xF98450B5602fa59CC66e1379DFfB6FDDc724CfC4 <https://etherscan.io/address/0xF98450B5602fa59CC66e1379DFfB6FDDc724CfC4#code>`_
+   USDT, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xBC89cd85491d81C6AD2954E6d0362Ee29fCa8F53 <https://etherscan.io/address/0xBC89cd85491d81C6AD2954E6d0362Ee29fCa8F53#code>`_
+   UST, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x3B7020743Bc2A4ca9EaF9D0722d42E20d6935855 <https://etherscan.io/address/0x3B7020743Bc2A4ca9EaF9D0722d42E20d6935855#code>`_
+   Y, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1 <https://etherscan.io/address/0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1#code>`_
 
 
 Pool Registry

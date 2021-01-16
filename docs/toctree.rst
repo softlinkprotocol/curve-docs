@@ -17,3 +17,10 @@ Curve
     The Main Registry <registry-registry.rst>
     Pool Info: Aggregated Getters <registry-pool-info.rst>
     registry-exchange.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Cross Asset Swaps
+
+    Overview <cross-asset-swaps.rst>

@@ -89,7 +89,7 @@ Estimating Swap Amounts
 
     Return the amount received when performing a cross-asset swap.
 
-    This method is used to calculate ``_expected`` when calling ``swap_into_synth``. You should reduce the value slightly to account for market movement prior to the transaction confirming.
+    This method is used to calculate ``_expected`` when calling :func:`swap_into_synth<StableSwap.swap_into_synth>`. You should reduce the value slightly to account for market movement prior to the transaction confirming.
 
     * ``_from``: Address of the initial asset being exchanged.
     * ``_synth``: Address of the synth being swapped into.
@@ -108,9 +108,9 @@ Estimating Swap Amounts
 
 .. py:function:: StableSwap.get_swap_from_synth_amount(_synth: address, _to: address, _amount: uint256) -> uint256: view
 
-    Return the amount received when swapping out of a settled synth
+    Return the amount received when swapping out of a settled synth.
 
-    This method is used to calculate ``_expected`` when calling ``swap_from_synth``. You should reduce the value slightly to account for market movement prior to the transaction confirming.
+    This method is used to calculate ``_expected`` when calling :func:`swap_from_synth<StableSwap.swap_from_synth>`. You should reduce the value slightly to account for market movement prior to the transaction confirming.
 
     * ``_synth``: Address of the synth being swapped out of.
     * ``_to``: Address of the asset to swap into.
@@ -131,7 +131,7 @@ Estimating Swap Amounts
 
     Estimate the final amount received when swapping between ``_from`` and ``_to``.
 
-    The actual received amount may be different if synth rates change prior to settlement.
+    Note that the actual received amount may be different due to rate changes during the settlement period.
 
     * ``_from``: Address of the initial asset being exchanged.
     * ``_to``: Address of the asset to swap into.
@@ -147,6 +147,10 @@ Estimating Swap Amounts
 
             >>> synthswap.get_estimated_swap_amount(dai, wbtc, 100000 * 1e18)
             273663013
+
+    .. note::
+
+        This method is for estimating the received amount from a complete swap over two transactions. If ``_to`` is a Synth, you should use :func:`get_swap_into_synth_amount<StableSwap.get_swap_from_synth_amount>` instead.
 
 Initiating a Swap
 -----------------

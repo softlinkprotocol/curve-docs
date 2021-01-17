@@ -21,6 +21,16 @@ Curve
 
 .. toctree::
     :maxdepth: 2
+    :caption: Metapool Factory
+
+    Overview <factory-overview.rst>
+    Deployer and Registry <factory-deployer.rst>
+    Pools <factory-pools.rst>
+    Deposit Contracts <factory-deposits.rst>
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Cross Asset Swaps
 
     Overview <cross-asset-swaps.rst>

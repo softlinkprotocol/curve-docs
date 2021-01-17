@@ -1,8 +1,8 @@
 .. _registry-address-provider:
 
-================
-Address Provider
-================
+==========================
+Registry: Address Provider
+==========================
 
 ``AddressProvider`` is an address provider for registry contracts.
 

@@ -1,8 +1,8 @@
 .. _address-provider:
 
-=========
-Pool Info
-=========
+===================
+Registry: Pool Info
+===================
 
 ``PoolInfo`` contains aggregate getter methods for querying large data sets about a single pool. It is designed for off-chain use (not optimized for gas efficiency).
 

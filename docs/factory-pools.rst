@@ -6,7 +6,7 @@ Metapool Factory: Pools
 
 Factory pools are permissionless metapools that can be deployed by anyone. New pools are deployed using :func:`Factory.deploy_metapool<Factory.deploy_metapool>`.
 
-Source code for the implementation contracts is available on `Github <https://github.com/iamdefinitelyahuman/curve-factory/blob/master/contracts>`_.
+Source code for the implementation contracts may be viewed on `Github <https://github.com/iamdefinitelyahuman/curve-factory/blob/master/contracts>`_.
 
 Implementation Contracts
 ========================

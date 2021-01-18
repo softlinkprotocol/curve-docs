@@ -6,7 +6,7 @@ MetaPool Factory
 
 The metapool factory allows for permissionless deployment of Curve metapools.
 
-Factory contracts are open source and may be `found on Github <https://github.com/curvefi/curve-factory>`_.
+Source code for factory contracts may be viewed on `Github <https://github.com/curvefi/curve-factory>`_.
 
 Organization
 ============

@@ -8,7 +8,7 @@ The ``Factory`` contract is used to deploy new Curve pools and to find existing 
 
     `0xfD6f33A0509ec67dEFc500755322aBd9Df1bD5B8 <https://etherscan.io/address/0xfD6f33A0509ec67dEFc500755322aBd9Df1bD5B8>`_
 
-Source code for this contract is available on `Github <https://github.com/curvefi/curve-factory/blob/master/contracts/Factory.vy>`_.
+Source code for this contract is may be viewed on `Github <https://github.com/curvefi/curve-factory/blob/master/contracts/Factory.vy>`_.
 
 .. _factory-deployer-deployment:
 

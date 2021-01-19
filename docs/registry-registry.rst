@@ -9,6 +9,17 @@ Registry
 
 Source code for this contract is available on `Github <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_.
 
+Deployment Address
+==================
+
+Use the :func:`get_registry<AddressProvider.get_registry>` method to get the address of the main registry from the address provider:
+
+    .. code-block:: python
+
+        >>> provider = Contract('0x0000000022D53366457F9d5E68Ec105046FC4383')
+        >>> provider.get_registry()
+        '0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c'
+
 View Functions
 ==============
 

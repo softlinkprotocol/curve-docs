@@ -16,7 +16,7 @@ Curve
     The Address Provider <registry-address-provider.rst>
     The Main Registry <registry-registry.rst>
     Pool Info: Aggregated Getters <registry-pool-info.rst>
-    registry-exchange.rst
+    Exchanges <registry-exchanges.rst>
 
 
 .. toctree::

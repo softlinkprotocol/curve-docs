@@ -1,4 +1,4 @@
-.. _address-provider:
+.. _registry-pool-info:
 
 ===================
 Registry: Pool Info
@@ -7,6 +7,17 @@ Registry: Pool Info
 ``PoolInfo`` contains aggregate getter methods for querying large data sets about a single pool. It is designed for off-chain use (not optimized for gas efficiency).
 
 Source code for this contract is available on `Github <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/PoolInfo.vy>`_.
+
+Deployment Address
+==================
+
+The pool info contract is registered in the address provider with ID ``1``. To get the current address:
+
+    .. code-block:: python
+
+        >>> provider = Contract('0x0000000022D53366457F9d5E68Ec105046FC4383')
+        >>> provider.get_address(1)
+        '0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C'
 
 View Functions
 ==============

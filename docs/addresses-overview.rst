@@ -9,15 +9,17 @@ Here is a list of all current contract deployments within the Curve protocol.
 Mainnet Contracts
 =================
 
-Note that for a single base and meta pool there are multiple deployed contracts, which are of the following formats:
+
+Base Pools
+----------
+
+Base pools in Curve contain two or more tokens and implement the  `Curve stable swap exchange mechanism <https://www.curve.fi/stableswap-paper.pdf>`_. Note that for a single base or meta pool there are multiple deployed contracts, which are of the following formats:
 
 - ``StableSwap<pool>.vy``: Curve stablecoin AMM contract
 - ``Deposit<pool>.vy``: contract used to wrap underlying tokens prior to depositing them into the pool (not always required)
 - ``CurveContract<version>.vy``: LP token contract for the pool
 
-
-Base Pools
-----------
+Here is a list of all base pool contracts currently in use: 
 
 .. csv-table::
    :header: "Pool", "Source", "Address"
@@ -60,6 +62,10 @@ Base Pools
 
 Meta Pools
 ----------
+
+Metapools allow for one token to seemingly trade with another underlying base pool. For instance, the GUSD metapool (``[GUSD, [3Pool]]``) contains GUSD and LP tokens of the 3pool (3CRV). This allows for trades between GUSD and any of the three tokens from the 3Pool (DAI, USDC and USDT).
+
+Here is a list of all meta pools currently in use: 
 
 .. csv-table:: 
    :header: "Pool", "Source", "Address"
@@ -107,6 +113,11 @@ Meta Pools
 
 Burners
 -------
+
+Burners are a fundamental component of the fee payout mechanism in Curve. A burner converts collected pool fees to an asset which can be converted to USDC. Ultimately, the exchanged for USDC is deposited to the 3Pool, as fees are paid out in 3CRV to veCRV holders. Depending on which tokens a pool contains, a specific burner implementation is used.
+
+Here is a list of all burner contracts currently in use:
+
 .. csv-table::
    :header: "Gauge", "Source", "Address"
 
@@ -124,6 +135,11 @@ Burners
 
 Liquidity Gauges
 ----------------
+
+Liquidity Gauges are used to stake LP tokens and handle distribution of the CRV governance token and are part of the Curve DAO.
+
+Here is a list of all liquidity gauges currently in use:
+
 .. csv-table::
    :header: "Gauge", "Source", "Address"
    
@@ -158,6 +174,10 @@ Liquidity Gauges
 Pool Registry
 -------------
 
+The pool registry serves as an on-chain information hub about the current state of Curve pools. For instance, on-chain integrators can fetch the current address of a Curve pool and query information about it.
+
+Here is a list of all components of the pool registry currently in use:
+
 .. csv-table::
    :header: "Name", "Source", "Address"
 
@@ -167,11 +187,14 @@ Pool Registry
    Registry, `Registry.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_, `0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c <https://etherscan.io/address/0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c#code>`_
 
 
-
-
-
 Curve DAO
 ---------
+
+Curve DAO consists of multiple smart contracts connected by `Aragon <https://github.com/aragon/aragonOS>`_. Interaction with Aragon occurs through a `modified implementation <https://github.com/curvefi/curve-aragon-voting>`_ of the `Aragon Voting App <https://github.com/aragon/aragon-apps/tree/master/apps/voting>`_. Aragon's standard one token, one vote method is replaced with a weighting system based on locking tokens. Curve DAO has a token (CRV) which is used for both governance and value accrual.
+
+View the `documentation <https://github.com/curvefi/curve-dao-contracts/blob/master/doc/readme.pdf>`_ for an in-depth overview of how the Curve DAO works.
+
+Here is a list of the contracts currently deployed that are used in the Curve DAO:
 
 .. csv-table::
    :header: "Name", "Source", "Address"

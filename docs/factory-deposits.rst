@@ -11,7 +11,7 @@ Deployment Addresses
 
 A single zap is used for all factory metapools targetting one base pool. The zaps are deployed to mainnet at the following addresses:
 
-* 3pool: `0x7AbDBAf29929e7F8621B757D2a7c04d78d633834 <https://etherscan.io/address/0x7abdbaf29929e7f8621b757d2a7c04d78d633834>`_
+* 3pool: `0xA79828DF1850E8a3A3064576f380D90aECDD3359 <https://etherscan.io/address/0xa79828df1850e8a3a3064576f380d90aecdd3359>`_
 * sBTC: `0x7AbDBAf29929e7F8621B757D2a7c04d78d633834  <https://etherscan.io/address/0x7abdbaf29929e7f8621b757d2a7c04d78d633834>`_
 
 

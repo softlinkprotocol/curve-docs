@@ -127,16 +127,17 @@ Here is a list of all burner contracts currently in use:
 .. csv-table::
    :header: "Gauge", "Source", "Address"
 
-   ABurner, `ABurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ABurner.vy>`_, `0xAbADFd391b3821f3C80D48a59229769D0b677d2E <https://etherscan.io/address/0xAbADFd391b3821f3C80D48a59229769D0b677d2E#code>`_
-   BTCBurner, `BTCBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/BTCBurner.vy>`_, `0x00702BbDEaD24C40647f235F15971dB0867F6bdB <https://etherscan.io/address/0x00702BbDEaD24C40647f235F15971dB0867F6bdB#code>`_
-   CBurner, `CBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/CBurner.vy>`_, `0x55858AdaBb9EA24dDd0678DB0E9b41D8bD48e7EE <https://etherscan.io/address/0x55858AdaBb9EA24dDd0678DB0E9b41D8bD48e7EE#code>`_
-   ETHBurner, `ETHBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ETHBurner.vy>`_, `0xD782EbD4bAbd95c2D8255112eFc6DD865c849394 <https://etherscan.io/address/0xD782EbD4bAbd95c2D8255112eFc6DD865c849394#code>`_
-   EuroBurner, `EuroBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/EuroBurner.vy>`_, `0x3a16b6001201577CC67bDD8aAE5A105bbB035882 <https://etherscan.io/address/0x3a16b6001201577CC67bDD8aAE5A105bbB035882#code>`_
+   ABurner, `ABurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ABurner.vy>`_, `0x12220a63a2013133d54558c9d03c35288eac9b34 <https://etherscan.io/address/0x12220a63a2013133d54558c9d03c35288eac9b34#code>`_
+   BTCBurner, `BTCBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/BTCBurner.vy>`_, `0xf9fc73496484290142ee856639f69e04465985cd <https://etherscan.io/address/0xf9fc73496484290142ee856639f69e04465985cd#code>`_
+   CBurner, `CBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/CBurner.vy>`_, `0xdd0e10857d952c73b2fa39ce86308299df8774b8 <https://etherscan.io/address/0xdd0e10857d952c73b2fa39ce86308299df8774b8#code>`_
+   ETHBurner, `ETHBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ETHBurner.vy>`_, `0xe1ea5d59082bb2165b1bbb93d85492e671fd0969 <https://etherscan.io/address/0xe1ea5d59082bb2165b1bbb93d85492e671fd0969#code>`_
+   EuroBurner, `EuroBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/EuroBurner.vy>`_, `0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0 <https://etherscan.io/address/0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0#code>`_
    LPBurner, `LPBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/LPBurner.vy>`_, `0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81 <https://etherscan.io/address/0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81#code>`_
    MetaBurner, `MetaBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/MetaBurner.vy>`_, `0xE4b65889469ad896e866331f0AB5652C1EcfB3E6 <https://etherscan.io/address/0xE4b65889469ad896e866331f0AB5652C1EcfB3E6#code>`_
    USDNBurner, `USDNBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/USDNBurner.vy>`_, `0x06534b0BF7Ff378F162d4F348390BDA53b15fA35 <https://etherscan.io/address/0x06534b0BF7Ff378F162d4F348390BDA53b15fA35#code>`_
-   UnderlyingBurner, `UnderlyingBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UnderlyingBurner.vy>`_, `0x874210cF3dC563B98c137927e7C951491A2e9AF3 <https://etherscan.io/address/0x874210cF3dC563B98c137927e7C951491A2e9AF3#code>`_
-   YBurner, `YBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/YBurner.vy>`_, `0x94c866a48EF49Db7Bf24207F2752E69BA85F6287 <https://etherscan.io/address/0x94c866a48EF49Db7Bf24207F2752E69BA85F6287#code>`_
+   UnderlyingBurner, `UnderlyingBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UnderlyingBurner.vy>`_, `0x786b374b5eef874279f4b7b4de16940e57301a58 <https://etherscan.io/address/0x786b374b5eef874279f4b7b4de16940e57301a58#code>`_
+   YBurner, `YBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/YBurner.vy>`_, `0xd16ea3e5681234da84419512eb597362135cd8c9 <https://etherscan.io/address/0xd16ea3e5681234da84419512eb597362135cd8c9#code>`_
+   UniswapBurner, `UniswapBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UniswapBurner.vy>`_, `0xf3b64840b39121b40d8685f1576b64c157ce2e24 <https://etherscan.io/address/0xf3b64840b39121b40d8685f1576b64c157ce2e24#code>`_
 
 
 Liquidity Gauges

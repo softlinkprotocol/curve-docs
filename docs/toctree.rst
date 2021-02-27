@@ -24,6 +24,7 @@ Curve
     Overview <factory-overview.rst>
     Deployer and Registry <factory-deployer.rst>
     Pools <factory-pools.rst>
+    Oracles <factory-oracles.rst>
     Deposit Contracts <factory-deposits.rst>
 
 .. toctree::

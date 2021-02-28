@@ -9,7 +9,6 @@ Here is a list of all current contract deployments within the Curve protocol.
 Mainnet Contracts
 =================
 
-
 Base Pools
 ----------
 
@@ -19,7 +18,7 @@ Base pools in Curve contain two or more tokens and implement the  `Curve stable 
 - ``Deposit<pool>.vy``: contract used to wrap underlying tokens prior to depositing them into the pool (not always required)
 - ``CurveContract<version>.vy``: LP token contract for the pool
 
-Here is a list of all base pool contracts currently in use: 
+Here is a list of all base pool contracts currently in use:
 
 .. csv-table::
    :header: "Pool", "Source", "Address"
@@ -47,7 +46,7 @@ Here is a list of all base pool contracts currently in use:
    renBTC, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_, `0x49849C98ae39Fff122806C06791Fa73784FB3675 <https://etherscan.io/address/0x49849C98ae39Fff122806C06791Fa73784FB3675#code>`_
    sAAVE, `StableSwapSAAVE.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/saave/StableSwapSAAVE.vy>`_, `0xEB16Ae0052ed37f479f7fe63849198Df1765a733 <https://etherscan.io/address/0xeb16ae0052ed37f479f7fe63849198df1765a733#code>`_
    sAAVE, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x02d341CcB60fAaf662bC0554d13778015d1b285C <https://etherscan.io/address/0x02d341CcB60fAaf662bC0554d13778015d1b285C#code>`_
-   sBTC, `StableSwapSBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/sbtc/StableSwapSBTC.vy>`_, `0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714 <https://etherscan.io/address/0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714#code>`_ 
+   sBTC, `StableSwapSBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/sbtc/StableSwapSBTC.vy>`_, `0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714 <https://etherscan.io/address/0x7fC77b5c7614E1533320Ea6DDc2Eb61fa00A9714#code>`_
    sBTC, `CurveTokenV1.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_,`0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3 <https://etherscan.io/address/0x075b1bb99792c9E1041bA13afEf80C91a1e70fB3#code>`_
    sETH, `StableSwapSETH.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/seth/StableSwapSETH.vy>`_, `0xc5424B857f758E906013F3555Dad202e4bdB4567 <https://etherscan.io/address/0xc5424b857f758e906013f3555dad202e4bdb4567#code>`_
    sETH, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0xA3D87FffcE63B53E0d54fAa1cc983B7eB0b74A9c <https://etherscan.io/address/0xA3D87FffcE63B53E0d54fAa1cc983B7eB0b74A9c#code>`_
@@ -71,9 +70,9 @@ Meta Pools
 
 Metapools allow for one token to seemingly trade with another underlying base pool. For instance, the GUSD metapool (``[GUSD, [3Pool]]``) contains GUSD and LP tokens of the 3pool (3CRV). This allows for trades between GUSD and any of the three tokens from the 3Pool (DAI, USDC and USDT).
 
-Here is a list of all meta pools currently in use: 
+Here is a list of all meta pools currently in use:
 
-.. csv-table:: 
+.. csv-table::
    :header: "Pool", "Source", "Address"
 
    bBTC, `StableSwapBBTC.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/bbtc/StableSwapBBTC.vy>`_, `0x071c661B4DeefB59E2a3DdB20Db036821eeE8F4b <https://etherscan.io/address/0x071c661B4DeefB59E2a3DdB20Db036821eeE8F4b#code>`_
@@ -117,29 +116,6 @@ Here is a list of all meta pools currently in use:
    UST, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x94e131324b6054c0D789b190b2dAC504e4361b53 <https://etherscan.io/address/0x94e131324b6054c0D789b190b2dAC504e4361b53#code>`_
 
 
-Burners
--------
-
-Burners are a fundamental component of the fee payout mechanism in Curve. A burner converts collected pool fees to an asset which can be converted to USDC. Ultimately, the exchanged for USDC is deposited to the 3Pool, as fees are paid out in 3CRV to veCRV holders. Depending on which tokens a pool contains, a specific burner implementation is used.
-
-Here is a list of all burner contracts currently in use:
-
-.. csv-table::
-   :header: "Gauge", "Source", "Address"
-
-   ABurner, `ABurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ABurner.vy>`_, `0x12220a63a2013133d54558c9d03c35288eac9b34 <https://etherscan.io/address/0x12220a63a2013133d54558c9d03c35288eac9b34#code>`_
-   BTCBurner, `BTCBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/BTCBurner.vy>`_, `0xf9fc73496484290142ee856639f69e04465985cd <https://etherscan.io/address/0xf9fc73496484290142ee856639f69e04465985cd#code>`_
-   CBurner, `CBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/CBurner.vy>`_, `0xdd0e10857d952c73b2fa39ce86308299df8774b8 <https://etherscan.io/address/0xdd0e10857d952c73b2fa39ce86308299df8774b8#code>`_
-   ETHBurner, `ETHBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ETHBurner.vy>`_, `0xe1ea5d59082bb2165b1bbb93d85492e671fd0969 <https://etherscan.io/address/0xe1ea5d59082bb2165b1bbb93d85492e671fd0969#code>`_
-   EuroBurner, `EuroBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/EuroBurner.vy>`_, `0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0 <https://etherscan.io/address/0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0#code>`_
-   LPBurner, `LPBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/LPBurner.vy>`_, `0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81 <https://etherscan.io/address/0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81#code>`_
-   MetaBurner, `MetaBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/MetaBurner.vy>`_, `0xE4b65889469ad896e866331f0AB5652C1EcfB3E6 <https://etherscan.io/address/0xE4b65889469ad896e866331f0AB5652C1EcfB3E6#code>`_
-   USDNBurner, `USDNBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/USDNBurner.vy>`_, `0x06534b0BF7Ff378F162d4F348390BDA53b15fA35 <https://etherscan.io/address/0x06534b0BF7Ff378F162d4F348390BDA53b15fA35#code>`_
-   UnderlyingBurner, `UnderlyingBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UnderlyingBurner.vy>`_, `0x786b374b5eef874279f4b7b4de16940e57301a58 <https://etherscan.io/address/0x786b374b5eef874279f4b7b4de16940e57301a58#code>`_
-   UniswapBurner, `UniswapBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UniswapBurner.vy>`_, `0xf3b64840b39121b40d8685f1576b64c157ce2e24 <https://etherscan.io/address/0xf3b64840b39121b40d8685f1576b64c157ce2e24#code>`_
-   YBurner, `YBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/YBurner.vy>`_, `0xd16ea3e5681234da84419512eb597362135cd8c9 <https://etherscan.io/address/0xd16ea3e5681234da84419512eb597362135cd8c9#code>`_
-
-
 Liquidity Gauges
 ----------------
 
@@ -149,7 +125,7 @@ Here is a list of all liquidity gauges currently in use:
 
 .. csv-table::
    :header: "Gauge", "Source", "Address"
-   
+
    3pool, `LiquidityGauge.sol <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A <https://etherscan.io/address/0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A#code>`_
    AAVE, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0xd662908ADA2Ea1916B3318327A97eB18aD588b5d <https://etherscan.io/address/0xd662908ADA2Ea1916B3318327A97eB18aD588b5d#code>`_
    ankrETH, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x6d10ed2cF043E6fcf51A0e7b4C2Af3Fa06695707 <https://etherscan.io/address/0x6d10ed2cF043E6fcf51A0e7b4C2Af3Fa06695707#code>`_
@@ -180,21 +156,6 @@ Here is a list of all liquidity gauges currently in use:
    Y, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1 <https://etherscan.io/address/0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1#code>`_
    Yv2, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, ` 0x8101E6760130be2C8Ace79643AB73500571b7162 <https://etherscan.io/address/0x8101E6760130be2C8Ace79643AB73500571b7162#code>`_
 
-Pool Registry
--------------
-
-The pool registry serves as an on-chain information hub about the current state of Curve pools. For instance, on-chain integrators can fetch the current address of a Curve pool and query information about it.
-
-Here is a list of all components of the pool registry currently in use:
-
-.. csv-table::
-   :header: "Name", "Source", "Address"
-
-   Address Provider, `AddressProvider.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/AddressProvider.vy>`_, `0x0000000022d53366457f9d5e68ec105046fc4383 <https://etherscan.io/address/0x0000000022d53366457f9d5e68ec105046fc4383#code>`_
-   Curve Calculator, `CurveCalc.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/CurveCalc.vy>`_, `0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E <https://etherscan.io/address/0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E#code>`_
-   Pool Info, `PoolInfo.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/PoolInfo.vy>`_, `0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C <https://etherscan.io/address/0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C#code>`_
-   Registry, `Registry.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_, `0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c <https://etherscan.io/address/0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c#code>`_
-
 
 Curve DAO
 ---------
@@ -209,6 +170,7 @@ Here is a list of the contracts currently deployed that are used in the Curve DA
    :header: "Name", "Source", "Address"
 
    CRV Token, `ERC20CRV.sol <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/ERC20CRV.vy>`_, `0xD533a949740bb3306d119CC777fa900bA034cd52 <https://etherscan.io/address/0xD533a949740bb3306d119CC777fa900bA034cd52#code>`_
+   Factory Pool Proxy, `OwnerProxy.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/OwnerProxy.vy>`_, `0x8cf8af108b3b46ddc6ad596aebb917e053f0d72b <https://etherscan.io/address/0x8cf8af108b3b46ddc6ad596aebb917e053f0d72b>`_
    Fee Distributor, `FeeDistributor.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/FeeDistributor.vy>`_, `0xA464e6DCda8AC41e03616F95f4BC98a13b8922Dc <https://etherscan.io/address/0xA464e6DCda8AC41e03616F95f4BC98a13b8922Dc#code>`_
    Gauge Controller, `GaugeController.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/GaugeController.vy>`_, `0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB <https://etherscan.io/address/0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB#code>`_
    Gauge Proxy, `GaugeProxy.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/GaugeProxy.vy>`_, `0x519AFB566c05E00cfB9af73496D00217A630e4D5 <https://etherscan.io/address/0x519AFB566c05E00cfB9af73496D00217A630e4D5#code>`_
@@ -216,3 +178,43 @@ Here is a list of the contracts currently deployed that are used in the Curve DA
    Pool Proxy, `PoolProxy.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/PoolProxy.vy>`_, `0x6e8f6D1DA6232d5E40b0B8758A0145D6C5123eB7 <https://etherscan.io/address/0x6e8f6D1DA6232d5E40b0B8758A0145D6C5123eB7#code>`_
    Voting Escrow, `VotingEscrow.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/VotingEscrow.vy>`_, `0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2 <https://etherscan.io/address/0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2#code>`_
    Vesting Escrow, `VestingEscrow.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/VestingEscrow.vy>`_, `0x575ccd8e2d300e2377b43478339e364000318e2c <https://etherscan.io/address/0x575ccd8e2d300e2377b43478339e364000318e2c#code>`_
+
+
+Burners
+-------
+
+Burners are a fundamental component of the fee payout mechanism in Curve. A burner converts collected pool fees to an asset which can be converted to USDC. Ultimately, the exchanged for USDC is deposited to the 3Pool, as fees are paid out in 3CRV to veCRV holders. Depending on which tokens a pool contains, a specific burner implementation is used.
+
+Here is a list of all burner contracts currently in use:
+
+.. csv-table::
+   :header: "Gauge", "Source", "Address"
+
+   ABurner, `ABurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ABurner.vy>`_, `0x12220a63a2013133d54558c9d03c35288eac9b34 <https://etherscan.io/address/0x12220a63a2013133d54558c9d03c35288eac9b34#code>`_
+   BTCBurner, `BTCBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/BTCBurner.vy>`_, `0xf9fc73496484290142ee856639f69e04465985cd <https://etherscan.io/address/0xf9fc73496484290142ee856639f69e04465985cd#code>`_
+   CBurner, `CBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/CBurner.vy>`_, `0xdd0e10857d952c73b2fa39ce86308299df8774b8 <https://etherscan.io/address/0xdd0e10857d952c73b2fa39ce86308299df8774b8#code>`_
+   ETHBurner, `ETHBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ETHBurner.vy>`_, `0xe1ea5d59082bb2165b1bbb93d85492e671fd0969 <https://etherscan.io/address/0xe1ea5d59082bb2165b1bbb93d85492e671fd0969#code>`_
+   EuroBurner, `EuroBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/EuroBurner.vy>`_, `0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0 <https://etherscan.io/address/0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0#code>`_
+   LPBurner, `LPBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/LPBurner.vy>`_, `0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81 <https://etherscan.io/address/0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81#code>`_
+   MetaBurner, `MetaBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/MetaBurner.vy>`_, `0xE4b65889469ad896e866331f0AB5652C1EcfB3E6 <https://etherscan.io/address/0xE4b65889469ad896e866331f0AB5652C1EcfB3E6#code>`_
+   SynthBurner, `SynthBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/SynthBurner.vy>`_, `0x67a0213310202DBc2cbE788f4349B72fbA90f9Fa <https://etherscan.io/address/0x67a0213310202dbc2cbe788f4349b72fba90f9fa>`_
+   USDNBurner, `USDNBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/USDNBurner.vy>`_, `0x06534b0BF7Ff378F162d4F348390BDA53b15fA35 <https://etherscan.io/address/0x06534b0BF7Ff378F162d4F348390BDA53b15fA35#code>`_
+   UnderlyingBurner, `UnderlyingBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UnderlyingBurner.vy>`_, `0x786b374b5eef874279f4b7b4de16940e57301a58 <https://etherscan.io/address/0x786b374b5eef874279f4b7b4de16940e57301a58#code>`_
+   UniswapBurner, `UniswapBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UniswapBurner.vy>`_, `0xf3b64840b39121b40d8685f1576b64c157ce2e24 <https://etherscan.io/address/0xf3b64840b39121b40d8685f1576b64c157ce2e24#code>`_
+   YBurner, `YBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/YBurner.vy>`_, `0xd16ea3e5681234da84419512eb597362135cd8c9 <https://etherscan.io/address/0xd16ea3e5681234da84419512eb597362135cd8c9#code>`_
+
+
+Pool Registry
+-------------
+
+The pool registry serves as an on-chain information hub about the current state of Curve pools. For instance, on-chain integrators can fetch the current address of a Curve pool and query information about it.
+
+Here is a list of all components of the pool registry currently in use:
+
+.. csv-table::
+   :header: "Name", "Source", "Address"
+
+   Address Provider, `AddressProvider.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/AddressProvider.vy>`_, `0x0000000022d53366457f9d5e68ec105046fc4383 <https://etherscan.io/address/0x0000000022d53366457f9d5e68ec105046fc4383#code>`_
+   Curve Calculator, `CurveCalc.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/CurveCalc.vy>`_, `0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E <https://etherscan.io/address/0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E#code>`_
+   Pool Info, `PoolInfo.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/PoolInfo.vy>`_, `0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C <https://etherscan.io/address/0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C#code>`_
+   Registry, `Registry.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_, `0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c <https://etherscan.io/address/0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c#code>`_

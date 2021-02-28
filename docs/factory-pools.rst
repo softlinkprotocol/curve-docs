@@ -15,14 +15,14 @@ Each pool deployed by the factory is a thin proxy contract created with Vyper's 
 
 The implementation contracts used for pools are deployed to the mainnet at the following addresses:
 
-* 3pool: `0x2c7796C0590CC100d70Af473993890d457cb2aC9 <https://etherscan.io/address/0x2c7796c0590cc100d70af473993890d457cb2ac9>`_
-* sBTC: `0xF7139A28f12C3F7aB3E24e6f1ac0C39816d8d9B1 <https://etherscan.io/address/0xf7139a28f12c3f7ab3e24e6f1ac0c39816d8d9b1>`_
+* 3pool: `0x5F890841f657d90E081bAbdB532A05996Af79Fe6 <https://etherscan.io/address/0x5F890841f657d90E081bAbdB532A05996Af79Fe6>`_
+* sBTC: `0x2f956eee002b0debd468cf2e0490d1aec65e027f <https://etherscan.io/address/0x2f956eee002b0debd468cf2e0490d1aec65e027f>`_
 
 When interacting with a factory pool you should use the ABI at the corresponding implementation address:
 
     .. code-block:: python
 
-        >>> implementation = Contract("0x2c7796C0590CC100d70Af473993890d457cb2aC9")
+        >>> implementation = Contract("0x5F890841f657d90E081bAbdB532A05996Af79Fe6")
         >>> abi = implementation.abi
         >>> pool = Contract.from_abi("ESD Pool", "0xFD9f9784ac00432794c8D370d4910D2a3782324C", abi)
 

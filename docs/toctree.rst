@@ -26,6 +26,7 @@ Curve
     Pools <factory-pools.rst>
     Oracles <factory-oracles.rst>
     Deposit Contracts <factory-deposits.rst>
+    Liquidity Migrator <factory-migrator.rst>
 
 .. toctree::
     :maxdepth: 2

@@ -12,6 +12,10 @@ Source code for this contract is may be viewed on `Github <https://github.com/cu
 
 .. _factory-deployer-deployment:
 
+.. warning::
+
+    Please carefully review the :ref:`limitations <factory-deployer-limitations>` of the factory prior to deploying a new pool. Deploying a pool using an incompatible token could result in permanent losses to liquidity providers and/or traders. Factory pools cannot be killed and tokens cannot be rescued from them!
+
 Deploying a Pool
 ================
 
@@ -44,6 +48,8 @@ Deploying a Pool
     .. note::
 
         After deploying a pool, you must also :ref:`add initial liquidity <factory-pools-add-liquidity>` before the pool can be used.
+
+.. _factory-deployer-limitations:
 
 Limitations
 -----------

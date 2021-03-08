@@ -1,8 +1,8 @@
 .. _addresses-overview:
 
-=========
-Addresses
-=========
+====================
+Deployment Addresses
+====================
 
 Here is a list of all current contract deployments within the Curve protocol.
 

@@ -9,6 +9,27 @@ Curve
 
 .. toctree::
     :maxdepth: 2
+    :caption: StableSwap Exchange
+
+    Overview <exchange-overview.rst>
+    Pools <exchange-pools.rst>
+    LP Tokens <exchange-lp-tokens.rst>
+    Deposit Contracts <exchange-deposits.rst>
+    Cross-Asset Swaps <exchange-cross-asset-swaps.rst>
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Curve DAO
+
+    Overview <dao-overview.rst>
+    Vote-Escrowed CRV <dao-vecrv.rst>
+    Voting <dao-voting.rst>
+    Liquidity Gauges and Minting CRV <dao-gauges.rst>
+    Fee Collection and Distribution <dao-fees.rst>
+    Ownership Proxies <dao-ownership.rst>
+
+.. toctree::
+    :maxdepth: 2
     :caption: Registry
 
     Overview <registry-overview.rst>
@@ -30,21 +51,16 @@ Curve
 
 .. toctree::
     :maxdepth: 2
-    :caption: Cross Asset Swaps
-
-    Overview <cross-asset-swaps.rst>
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Reference
-
-    Deployment Addresses <ref-addresses.rst>
-
-.. toctree::
-    :maxdepth: 2
     :caption: Contributor Guide
 
     Overview <guide-overview.rst>
     General <guide-general.rst>
     Testing <guide-testing.rst>
     Code Style <guide-code-style.rst>
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Reference
+
+    Deployment Addresses <ref-addresses.rst>
+    Glossary of Terms <ref-glossary.rst>

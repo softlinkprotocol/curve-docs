@@ -5,7 +5,7 @@
 
 |
 
-`Curve <www.curve.fi>`_ is an exchange liquidity pool on Ethereum, designed for extremely efficient stablecoin trading and low risk, supplemental fee income for liquidity providers, without an opportunity cost.
+`Curve <www.curve.fi>`_ is an exchange liquidity pool on Ethereum. Curve is designed for extremely efficient stablecoin trading and low risk, supplemental fee income for liquidity providers, without an opportunity cost.
 
 This documentation outlines the technical implementation of the core Curve protocol and related smart contracts. It may be useful for contributors to the Curve codebase, third party integrators, or technically proficient users of the protocol.
 

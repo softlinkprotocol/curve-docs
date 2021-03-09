@@ -21,3 +21,10 @@ Non-technical users may prefer the `Resources <https://resources.curve.fi/>`_ se
 
 Procotol Overview
 =================
+
+Curve can be broadly separated into the following categories:
+
+* :ref:`StableSwap<exchange-overview>`: Exchange contracts and core functionality of the protocol
+* The :ref:`DAO<dao-overview>`: Protocol governance and value accrual
+* The :ref:`Factory<factory-overview>`: Permissionless deployment of Curve metapools
+* The :ref:`Registry<registry-overview>`: Standardized API and on-chain resources to aid 3rd party integrations

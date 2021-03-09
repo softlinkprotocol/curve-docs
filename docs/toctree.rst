@@ -39,3 +39,12 @@ Curve
     :caption: Reference
 
     Deployment Addresses <ref-addresses.rst>
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Contributor Guide
+
+    Overview <guide-overview.rst>
+    General <guide-general.rst>
+    Testing <guide-testing.rst>
+    Code Style <guide-code-style.rst>

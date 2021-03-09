@@ -46,6 +46,5 @@ Curve
 
     Overview <guide-overview.rst>
     General <guide-general.rst>
-    Curve <guide-curve.rst>
     Testing <guide-testing.rst>
     Code Style <guide-code-style.rst>

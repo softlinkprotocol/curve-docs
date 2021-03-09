@@ -205,3 +205,8 @@ pre {
 .toc-backref {
     color: grey !important;
 }
+
+.MathJax span {
+    /* LaTeX renders */
+    color: #ddd !important;
+}

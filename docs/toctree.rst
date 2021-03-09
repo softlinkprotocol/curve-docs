@@ -23,9 +23,9 @@ Curve
 
     Overview <dao-overview.rst>
     Vote-Escrowed CRV <dao-vecrv.rst>
-    Voting <dao-voting.rst>
     Liquidity Gauges and Minting CRV <dao-gauges.rst>
     Fee Collection and Distribution <dao-fees.rst>
+    Governance and Voting <dao-voting.rst>
     Ownership Proxies <dao-ownership.rst>
 
 .. toctree::

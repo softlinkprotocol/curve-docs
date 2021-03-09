@@ -6,11 +6,8 @@ Deployment Addresses
 
 Here is a list of all current contract deployments within the Curve protocol.
 
-Mainnet Contracts
-=================
-
 Base Pools
-----------
+==========
 
 Base pools in Curve contain two or more tokens and implement the  `Curve stable swap exchange mechanism <https://www.curve.fi/stableswap-paper.pdf>`_. Note that for a single base or meta pool there are multiple deployed contracts, which are of the following formats:
 
@@ -66,7 +63,7 @@ Here is a list of all base pool contracts currently in use:
 
 
 Meta Pools
-----------
+==========
 
 Metapools allow for one token to seemingly trade with another underlying base pool. For instance, the GUSD metapool (``[GUSD, [3Pool]]``) contains GUSD and LP tokens of the 3pool (3CRV). This allows for trades between GUSD and any of the three tokens from the 3Pool (DAI, USDC and USDT).
 
@@ -117,7 +114,7 @@ Here is a list of all meta pools currently in use:
 
 
 Liquidity Gauges
-----------------
+================
 
 Liquidity Gauges are used to stake LP tokens and handle distribution of the CRV governance token and are part of the Curve DAO.
 
@@ -158,7 +155,7 @@ Here is a list of all liquidity gauges currently in use:
 
 
 Curve DAO
----------
+=========
 
 Curve DAO consists of multiple smart contracts connected by `Aragon <https://github.com/aragon/aragonOS>`_. Interaction with Aragon occurs through a `modified implementation <https://github.com/curvefi/curve-aragon-voting>`_ of the `Aragon Voting App <https://github.com/aragon/aragon-apps/tree/master/apps/voting>`_. Aragon's standard one token, one vote method is replaced with a weighting system based on locking tokens. Curve DAO has a token (CRV) which is used for both governance and value accrual.
 
@@ -179,9 +176,51 @@ Here is a list of the contracts currently deployed that are used in the Curve DA
    Voting Escrow, `VotingEscrow.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/VotingEscrow.vy>`_, `0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2 <https://etherscan.io/address/0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2#code>`_
    Vesting Escrow, `VestingEscrow.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/VestingEscrow.vy>`_, `0x575ccd8e2d300e2377b43478339e364000318e2c <https://etherscan.io/address/0x575ccd8e2d300e2377b43478339e364000318e2c#code>`_
 
+.. _addresses-aragon:
 
-Burners
--------
+Aragon
+======
+
+Main documentation: :ref:`Curve DAO: Governance<dao-voting>`
+
+Voting App
+----------
+
+Aragon `Voting App <https://wiki.aragon.org/archive/dev/apps/voting/>`_ deployments are the main entry points used to create new votes, vote, checking the status of a vote, and execute a successful vote.
+
+.. csv-table::
+   :header: "Vote Type", "Address"
+
+   Ownership, `0xE478de485ad2fe566d49342Cbd03E49ed7DB3356 <https://etherscan.io/address/0xe478de485ad2fe566d49342cbd03e49ed7db3356>`_
+   Parameter, `0xBCfF8B0b9419b9A88c44546519b1e909cF330399 <https://etherscan.io/address/0xbcff8b0b9419b9a88c44546519b1e909cf330399>`_
+   Emergency, `0x1115c9b3168563354137cDc60efb66552dd50678 <https://etherscan.io/address/0x1115c9b3168563354137cdc60efb66552dd50678>`_
+
+
+Agent
+-----
+
+Aragon `Agent <https://hack.aragon.org/docs/guides-use-agent>`_ deployments correspond to the different owner accounts within the DAO. Contract calls made as a result of a successful vote will execute from these addresses. When deploying new contracts, these addresses should be given appropriate access to admin functionality.
+
+.. csv-table::
+   :header: "Vote Type", "Address"
+
+   Ownership, `0x40907540d8a6c65c637785e8f8b742ae6b0b9968 <https://etherscan.io/address/0x40907540d8a6c65c637785e8f8b742ae6b0b9968>`_
+   Parameter, `0x4eeb3ba4f221ca16ed4a0cc7254e2e32df948c5f <https://etherscan.io/address/0x4eeb3ba4f221ca16ed4a0cc7254e2e32df948c5f>`_
+   Emergency, `0x00669DF67E4827FCc0E48A1838a8d5AB79281909 <https://etherscan.io/address/0x00669DF67E4827FCc0E48A1838a8d5AB79281909>`_
+
+Tokens
+------
+
+The following token addresses are used for determining voter weights within Curve's Aragon DAOs.
+
+.. csv-table::
+   :header: "Vote Type", "Address"
+
+   Ownership / Parameter, `0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2 <https://etherscan.io/address/0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2>`_
+   Emergency, `0x4c0947B16FB1f755A2D32EC21A0c4181f711C500 <https://etherscan.io/address/0x4c0947B16FB1f755A2D32EC21A0c4181f711C500>`_
+
+Fee Burners
+===========
 
 Burners are a fundamental component of the fee payout mechanism in Curve. A burner converts collected pool fees to an asset which can be converted to USDC. Ultimately, the exchanged for USDC is deposited to the 3Pool, as fees are paid out in 3CRV to veCRV holders. Depending on which tokens a pool contains, a specific burner implementation is used.
 
@@ -205,7 +244,7 @@ Here is a list of all burner contracts currently in use:
 
 
 Pool Registry
--------------
+=============
 
 The pool registry serves as an on-chain information hub about the current state of Curve pools. For instance, on-chain integrators can fetch the current address of a Curve pool and query information about it.
 

@@ -3,9 +3,9 @@ Curve
 =====
 
 .. toctree::
-    :maxdepth: 2
+    :titlesonly:
 
-    Introduction <index.rst>
+    Protocol Overview <index.rst>
 
 .. toctree::
     :maxdepth: 2
@@ -36,6 +36,6 @@ Curve
 
 .. toctree::
     :maxdepth: 2
-    :caption: Addresses
+    :caption: Reference
 
-    Overview <addresses-overview.rst>
+    Deployment Addresses <ref-addresses.rst>

@@ -1,4 +1,4 @@
-.. _factory-deployer:
+.. _factory-migrator:
 
 ====================================
 Metapool Factory: Liquidity Migrator
@@ -9,8 +9,6 @@ The ``PoolMigrator`` contract is used for migrating liquidity between Curve fact
     `0xd6930b7f661257DA36F93160149b031735237594 <https://etherscan.io/address/0xd6930b7f661257DA36F93160149b031735237594>`_
 
 Source code for this contract is may be viewed on `Github <https://github.com/curvefi/curve-factory/blob/master/contracts/PoolMigrator.vy>`_.
-
-.. _factory-deployer-deployment:
 
 Migrating Liquidity between Pools
 =================================

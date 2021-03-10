@@ -113,6 +113,8 @@ Here is a list of all meta pools currently in use:
    UST, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x94e131324b6054c0D789b190b2dAC504e4361b53 <https://etherscan.io/address/0x94e131324b6054c0D789b190b2dAC504e4361b53#code>`_
 
 
+.. _addresses-gauges:
+
 Liquidity Gauges
 ================
 
@@ -153,6 +155,7 @@ Here is a list of all liquidity gauges currently in use:
    Y, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1 <https://etherscan.io/address/0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1#code>`_
    Yv2, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, ` 0x8101E6760130be2C8Ace79643AB73500571b7162 <https://etherscan.io/address/0x8101E6760130be2C8Ace79643AB73500571b7162#code>`_
 
+.. _addresses-dao:
 
 Curve DAO
 =========

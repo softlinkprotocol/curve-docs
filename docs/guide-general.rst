@@ -221,6 +221,13 @@ git branch -d newfeature
 ```
 
 
+Creating A New Repository
+=========================
+
+For some contributions it may be required to create a new Curve repository. The `Curve repositories <https://github.com/curvefi>`_ aim to employ a consistent code style. In order to make new repositories adhere to this style, there exists a *Curve repository template*, which should be used.
+
+The template repository can be found `here <https://github.com/curvefi/curve-base-repo>`_. This template already contains dependencies and formatting rules in line with the Curve style guidelines.
+
 
 **Copyright**
 

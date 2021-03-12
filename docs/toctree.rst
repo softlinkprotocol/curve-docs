@@ -11,11 +11,17 @@ Curve
     :maxdepth: 2
     :caption: StableSwap Exchange
 
+    Cross-Asset Swaps <exchange-cross-asset-swaps.rst>
+
+..
+    As these sections are completed, add them above cross asset swaps!
+
     Overview <exchange-overview.rst>
     Pools <exchange-pools.rst>
     LP Tokens <exchange-lp-tokens.rst>
     Deposit Contracts <exchange-deposits.rst>
-    Cross-Asset Swaps <exchange-cross-asset-swaps.rst>
+..
+
 
 .. toctree::
     :maxdepth: 2

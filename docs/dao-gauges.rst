@@ -165,8 +165,12 @@ Deposits and Withdrawals
             >>> balance = lp_token.balanceOf(alice)
 
             >>> lp_token.approve(gauge, balance, {'from': alice})
+            Transaction sent: 0xa791801ccc57ad4edcfcaff7b5dab1c9101b78cf978a8d7fc185d9194bd3c2fa
+              Gas price: 20.0 gwei   Gas limit: 56299   Nonce: 23
 
             >>> gauge.deposit(balance, {'from': alice})
+            Transaction sent: 0xd4edcfcaff7b5dab1c9101b78cf978a8d7fc185d9194bd3c2faa791801ccc57a
+              Gas price: 20.0 gwei   Gas limit: 187495   Nonce: 24
 
 .. py:function:: LiquidityGauge.withdraw(amount: uint256): nonpayable
 
@@ -178,6 +182,8 @@ Deposits and Withdrawals
 
             >>> balance = gauge.balanceOf(alice)
             >>> gauge.withdraw(balance, {'from': alice})
+            Transaction sent: 0x1b78cf978a8d7fc185d9194bd3c2faa791801ccc57ad4edcfcaff7b5dab1c910
+              Gas price: 20.0 gwei   Gas limit: 217442   Nonce: 25
 
 
 .. py:function:: LiquidityGauge.approved_to_deposit(caller: address, receiver: address) -> bool: view
@@ -197,6 +203,8 @@ Return the approval status for ``caller`` to deposit LP tokens into the gauge on
             False
 
             >>> gauge.set_approve_deposit(bob, True, {'from': alice})
+            Transaction sent: 0xc185d9194bd3c2faa791801ccc57ad4edcfcaff7b5dab1c9101b78cf978a8d7f
+              Gas price: 20.0 gwei   Gas limit: 47442   Nonce: 26
 
             >>> gauge.approved_to_deposit(bob, alice)
             True
@@ -442,7 +450,7 @@ Vote weight power is expressed as an integer in bps (units of 0.01%).  ``10000``
 
         .. code-block:: python
 
-            >>> slope = gauce_controller.vote_user_slopes(alice, gauge)
+            >>> slope = gauge_controller.vote_user_slopes(alice, gauge)
 
             >>> slope['power']  # the current vote weight for this gauge
             4200
@@ -459,6 +467,8 @@ Vote weight power is expressed as an integer in bps (units of 0.01%).  ``10000``
             >>> gauge_controller = Contract("0x2F50D538606Fa9EDD2B11E2446BEb18C9D5846bB")
 
             >>> gauge_controller.vote_for_gauge_weights(my_favorite_gauge, 10000, {'from': alice})
+            Transaction sent: 0xc185d9194bd3c2faa791801ccc57ad4edcfcaff7b5dab1c9101b78cf978a8d7f
+              Gas price: 20.0 gwei   Gas limit: 47442   Nonce: 26
 
 
 Adding New Gauges and Types

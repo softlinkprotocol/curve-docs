@@ -110,10 +110,15 @@ Working with Vote-Locks
             >>> vote_escrow = Contract('0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2')
 
             >>> crv.approve(vote_escrow, 2**256-1, {'from': alice})
+            Transaction sent: 0xa7978a8d7fc185d9194bd3c2fa1801ccc57ad4edcfcaff7b5dab1c9101b78cf9
+              Gas price: 20.0 gwei   Gas limit: 56299   Nonce: 23
+
 
             >>> amount = crv.balanceOf(alice)
             >>> unlock_time = int(time.time() + 86400 * 365 * 4)
             >>> vote_escrow.create_lock(amount, unlock_time, {'from': alice})
+            Transaction sent: 0xa7978a8d7fc185d9194bd3c2fa1801ccc57ad4edcfcaff283958329291b78cf1
+              Gas price: 20.0 gwei   Gas limit: 307234   Nonce: 24
 
 .. py:function:: VotingEscrow.increase_amount(_value: uint256)
 
@@ -125,6 +130,8 @@ Working with Vote-Locks
 
             >>> amount = crv.balanceOf(alice)
             >>> vote_escrow.increase_amount(amount, {'from': alice})
+            Transaction sent: 0xa7978a8d7fc185d9194bd3c2fa1801ccc57ad4edcfcaff7b5dab1c9101b78cf9
+              Gas price: 20.0 gwei   Gas limit: 156299   Nonce: 24
 
 .. py:function:: VotingEscrow.increase_unlock_time(_unlock_time: uint256)
 
@@ -136,6 +143,8 @@ Working with Vote-Locks
 
             >>> unlock_time = int(time.time() + 86400 * 365 * 4)
             >>> vote_escrow.increase_unlock_time(unlock_time, {'from': alice})
+            Transaction sent: 0xa7978a8d7fc185d9194bd3c2fa1801ccc57ad4edcfcaff7b5dab1c9101b78cf9
+              Gas price: 20.0 gwei   Gas limit: 282041   Nonce: 24
 
 .. py:function:: VotingEscrow.withdraw()
 
@@ -144,3 +153,5 @@ Working with Vote-Locks
         .. code-block:: python
 
             >>> vote_escrow.withdraw({'from': alice})
+            Transaction sent: 0xa7978a8d7fc185d9194bd3c2fa1801ccc57ad4edcfcaff7b5dab1c9101b78cf9
+              Gas price: 20.0 gwei   Gas limit: 178629   Nonce: 24

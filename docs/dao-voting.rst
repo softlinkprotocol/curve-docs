@@ -60,6 +60,8 @@ To place a vote via the CLI, first open a Brownie console connected to mainnet. 
 
         >>> aragon = Contract(VOTING_ADDRESS)
         >>> aragon.vote(VOTE_ID, MY_VOTE, False, {'from': acct})
+        Transaction sent: 0xa791801ccc57ad4edcfcaff7b5dab1c9101b78cf978a8d7fc185d9194bd3c2fa
+          Gas price: 20.0 gwei   Gas limit: 156299   Nonce: 23
 
 
     * ``VOTING_ADDRESS`` is one of the voting addresses given above
@@ -75,5 +77,7 @@ To execute a vote via the CLI, first open a Brownie console connected to mainnet
 
         >>> aragon = Contract(VOTING_ADDRESS)
         >>> aragon.executeVote({'from': acct})
+        Transaction sent: 0x85d9194bd3c2fa1801ccc57ad4edcfa7978a8d7fc1caff7b5dab1c9101b78cf9
+          Gas price: 20.0 gwei   Gas limit: 424912   Nonce: 24
 
     * ``VOTING_ADDRESS`` is one of the voting addresses given above

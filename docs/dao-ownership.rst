@@ -15,7 +15,7 @@ At the ownership proxy level there are two main contracts:
     * ``PoolProxy``: Admin functionality for :ref:`exchange contracts<exchange-pools>`
     * ``GaugeProxy``: Admin functionality for :ref:`liquidity gauges<dao-gauges>`
 
-Deployment addresses can be found in the :ref:`addresses reference<addresses-dao>` section of the documentation.
+The DAO is capable of replacing the ownership proxies via a vote. Deployment addresses for the current contracts can be found in the :ref:`addresses reference<addresses-dao>` section of the documentation.
 
 .. _dao-ownership-agents:
 
@@ -40,6 +40,8 @@ The Curve DAO has a total of three `Aragon Agent <https://hack.aragon.org/docs/g
     The emergency DAO consists of `nine members <https://dao.curve.fi/emergencymembers>`_, comprised of a mix of the Curve team and prominent figures within the DeFi community. Each member has one vote. Any member may propose a vote.
 
     All members of the emergency DAO may propose new votes. A vote lasts for 24 hours and can be executed immediately once it receives 66% support.
+
+.. _dao-ownership-pool-proxy:
 
 PoolProxy
 =========

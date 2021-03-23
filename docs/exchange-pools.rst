@@ -306,10 +306,13 @@ Some newer pools (e.g., `IB <https://github.com/curvefi/curve-contract/blob/mast
 
     * ``_amounts``: List of amounts of coins to deposit
     * ``_min_mint_amount``: Minimum amount of LP tokens to mint from the deposit
-    * ``_use_underlying`` If ``True`, deposit underlying assets instead of wrapped assets.
+    * ``_use_underlying`` If ``True``, deposit underlying assets instead of wrapped assets.
 
     Returns amount of LP tokens received in exchange for the deposited tokens.
 
+
+
+.. _exchange-pools-meta:
 
 Metapools
 =========

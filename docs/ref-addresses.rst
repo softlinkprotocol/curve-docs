@@ -61,6 +61,7 @@ Here is a list of all base pool contracts currently in use:
    Yv2, `StableSwapYv2.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/yv2/StableSwapYv2.vy>`_, `0x8925D9d9B4569D737a48499DeF3f67BaA5a144b9 <https://etherscan.io/address/0x8925D9d9B4569D737a48499DeF3f67BaA5a144b9#code>`_
    Yv2, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_, `0x571FF5b7b346F706aa48d696a9a4a288e9Bb4091 <https://etherscan.io/address/0x571FF5b7b346F706aa48d696a9a4a288e9Bb4091#code>`_
 
+.. _addresses-metapools:
 
 Meta Pools
 ==========

@@ -17,12 +17,6 @@ Curve
     Deposit Contracts <exchange-deposits.rst>
     Cross-Asset Swaps <exchange-cross-asset-swaps.rst>
 
-..
-    As these sections are completed, add them above cross asset swaps!
-
-..
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Curve DAO

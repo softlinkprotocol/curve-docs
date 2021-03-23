@@ -4,7 +4,7 @@
 Curve StableSwap: Pools
 =======================
 
-A Curve pool is a smart contract that implements the StableSwap invariant and thereby allows for the exchange of two tokens.
+A Curve pool is a smart contract that implements the StableSwap invariant and thereby allows for the exchange of two or more tokens.
 
 More broadly, Curve pools can be split into three categories:
 
@@ -15,9 +15,12 @@ More broadly, Curve pools can be split into three categories:
 Source code for Curve pools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/tree/master/contracts>`_.
 
 .. warning::
-    The API for plain, lending and metapools applies to all pools that are implemented based on `pool templates <https://github.com/curvefi/curve-contract/tree/master/contracts/pool-templates>`_. When interacting with older Curve pools, there may be differences in terms of visibility, gas efficiency and/or variable naming. Please **do not** assume for a Curve pool to implement the API outlined in this section and verify this.
+    The API for plain, lending and metapools applies to all pools that are implemented based on `pool templates <https://github.com/curvefi/curve-contract/tree/master/contracts/pool-templates>`_. When interacting with older Curve pools, there may be differences in terms of visibility, gas efficiency and/or variable naming. Furthermore, note that older contracts use ``vyper 0.1.x...`` and that the getters generated for public arrays changed between ``0.1.x`` and ``0.2.x`` to accept ``uint256`` instead of ``int128`` in order to handle the lookups.
 
-For any code style information, please refer to the official :ref:`style guide <guide-code-style>`.
+
+    Please **do not** assume for a Curve pool to implement the API outlined in this section but verify this before interacting with a pool contract.
+
+For information on code style please refer to the official :ref:`style guide <guide-code-style>`.
 
 
 Plain Pools
@@ -30,14 +33,17 @@ An example of a Curve plain pool is `3Pool <https://github.com/curvefi/curve-con
 .. note::
     The API of plain pools is also implemented by lending and metapools.
 
-The Brownie console interaction examples are using `EURS Pool <https://etherscan.io/address/0x0Ce6a5fF5217e38315f87032CF90686C96627CAA>`_.
+The following Brownie console interaction examples are using `EURS Pool <https://etherscan.io/address/0x0Ce6a5fF5217e38315f87032CF90686C96627CAA>`_. The template source code for plain pools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/base/SwapTemplateBase.vy>`_.
+
+.. note::
+    Every pool has the constant private attribute ``N_COINS``, which is the number of coins in the pool. This is referred to by several pool methods in the API.
 
 Getting Pool Info
 -----------------
 
-.. py:function:: StableSwap.coins(i: uint256) -> uint256: view
+.. py:function:: StableSwap.coins(i: uint256) -> address: view
 
-    Getter for the array of swappable coins within the pool. The last coin will always be the LP token of the base pool.
+    Getter for the array of swappable coins within the pool.
 
     .. code-block:: python
 
@@ -53,7 +59,7 @@ Getting Pool Info
         >>> pool.balances(0)
         2918187395
 
-.. py:function:: StableSwap.owner() -> uint256: view
+.. py:function:: StableSwap.owner() -> address: view
 
     Getter for the admin/owner of the pool.
 
@@ -62,7 +68,7 @@ Getting Pool Info
         >>> pool.owner()
         '0xeCb456EA5365865EbAb8a2661B0c503410e9B347'
 
-.. py:function:: StableSwap.lp_token() -> uint256: view
+.. py:function:: StableSwap.lp_token() -> address: view
 
     Getter for the :ref:`LP token <exchange-lp-tokens>` of the pool.
 
@@ -71,6 +77,8 @@ Getting Pool Info
         >>> pool.lp_token()
         '0x194eBd173F6cDacE046C53eACcE9B953F28411d1'
 
+    .. note::
+        In older Curve pools ``lp_token`` may **not** be ``public`` and thus not visible.
 
 .. py:function:: StableSwap.A() -> uint256: view
 
@@ -112,26 +120,13 @@ Getting Pool Info
 
     The percentage of the swap fee that is taken as an admin fee, as an integer with with 1e10 precision.
 
-    For factory pools this is hardcoded at 50% (``5000000000``).
+    Admin fee is set at 50% (``5000000000``) and is paid out to veCRV holders (see :ref:`Fee Collection and Distribution <dao-fees>`).
 
     .. code-block:: python
 
         >>> pool.admin_fee()
         5000000000
 
-.. py:function:: StableSwap.calc_token_amount(_amounts: uint256[N_COINS], _is_deposit: bool) -> uint256: view
-
-    Calculate addition or reduction in token supply from a deposit or withdrawal.
-
-    * ``_amounts``: Amount of each coin being deposited
-    * ``_is_deposit``: Set True for deposits, False for withdrawals
-
-    Returns the expected amount of LP tokens received. This calculation accounts for slippage, but not fees.
-
-    .. code-block:: python
-
-        >>> pool.calc_token_amount([10**2, 10**18], True)
-        1996887509167925969
 
 Making Exchanges
 ----------------
@@ -164,8 +159,25 @@ Making Exchanges
         >>> pool.exchange(0, 1, 10**2, expected, {"from": alice})
 
 
+.. _liquidity-plain-pools:
+
 Adding/Removing Liquidity
 -------------------------
+
+.. py:function:: StableSwap.calc_token_amount(_amounts: uint256[N_COINS], _is_deposit: bool) -> uint256: view
+
+Calculate addition or reduction in token supply from a deposit or withdrawal.
+
+* ``_amounts``: Amount of each coin being deposited
+* ``_is_deposit``: Set True for deposits, False for withdrawals
+
+Returns the expected amount of LP tokens received. This calculation accounts for slippage, but not fees.
+
+.. code-block:: python
+
+    >>> pool.calc_token_amount([10**2, 10**18], True)
+    1996887509167925969
+
 
 .. py:function:: StableSwap.add_liquidity(_amounts: uint256[N_COINS], _min_mint_amount: uint256) -> uint256
 
@@ -213,33 +225,100 @@ Adding/Removing Liquidity
     Returns the amount of coin ``i`` received.
 
 
+.. _exchange-pools-lending:
+
 Lending Pools
 =============
 
-Curve pools may contain lending functionality, whereby the underlying tokens are lent out on other protocols (e.g., Compound or Yearn). Hence, the main difference to a plain pool is that a lending pool does **not** hold the underlying token itself, but rather a **wrapped** representation of it. By allocating liquidity to other protocols, liquidity providers to the Curve pool can receive interest in addition to trading fees.
+Curve pools may contain lending functionality, whereby the underlying tokens are lent out on other protocols (e.g., Compound or Yearn). Hence, the main difference to a plain pool is that a lending pool does **not** hold the underlying token itself, but a **wrapped** representation of it.
+
+Currently, Curve supports the following lending pools:
+
+    * ``aave``: `Aave pool <https://www.curve.fi/aave>`_, with lending on `Aave <https://www.aave.com/>`_
+    * ``busd``: `BUSD pool <https://www.curve.fi/busd>`_, with lending on `yearn.finance <https://yearn.finance/>`_
+    * ``compound``: `Compound pool <https://www.curve.fi/compound>`_, with lending on `Compound <https://compound.finance/>`_
+    * ``ib``: `Iron Bank pool <https://www.curve.fi/ib>`_, with lending on `Cream <https://v1.yearn.finance/lending>`_
+    * ``pax``: `PAX pool <https://www.curve.fi/pax>`_, with lending on `yearn.finance <https://yearn.finance/>`_
+    * ``usdt``: `USDT pool <https://www.curve.fi/usdt>`_, with lending on `Compound <https://compound.finance/>`_
+    * ``y``: `Y pool <https://www.curve.fi/y>`_, with lending on `yearn.finance <https://yearn.finance/>`_
 
 An example of a Curve lending pool is `Compound Pool <https://github.com/curvefi/curve-contract/tree/master/contracts/pools/compound>`_, which contains the wrapped tokens ``cDAI`` and ``cUSDC``, while the underlying tokens ``DAI`` and ``USDC`` are lent out on Compound. Liquidity providers of the Compound Pool therefore receive interest generated on Compound in addition to fees from token swaps in the pool.
 
 Implementation of lending pools may differ with respect to how wrapped tokens accrue interest. There are two main types of wrapped tokens that are used by lending pools:
 
-    * ``cToken-style tokens``: These are tokens, such as interest-bearing cTokens on Compound (e.g., ``cDAI``), where interest accrues as the rate of the token increases.
+    * ``cToken-style tokens``: These are tokens, such as interest-bearing cTokens on Compound (e.g., ``cDAI``) or on yTokens on Yearn, where interest accrues as the rate of the token increases.
     * ``aToken-style tokens``: These are tokens, such as aTokens on AAVE (e.g., ``aDAI``), where interest accrues as the balance of the token increases.
+
+The template source code for lending pools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/y/SwapTemplateY.vy>`_.
+
+
+Getting Pool Info
+-----------------
+
+.. py:function:: StableSwap.underlying_coins(i: uint256) -> address: view
+
+    Getter for the array of **underlying** coins within the pool.
+
+    .. code-block:: python
+
+        >>> lending_pool.coins(0)
+        '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643'
+        >>> lending_pool.coins(1)
+        '0x39AA39c021dfbaE8faC545936693aC917d5E7563'
 
 
 Making Exchanges
 ----------------
 
-.. py:function:: StableSwap.exchange_underlying(i: int128, j: int128, dx: uint256, min_dy: uint256)
+Like plain pools, lending pools have the ``exchange`` method. However, in the case of lending pools, calling ``exchange`` performs a swap between two **wrapped** tokens in the pool.
+
+For example, calling ``exchange`` on the Compound Pool, would result in a swap between the wrapped tokens ``cDAI`` and ``cUSDC``.
+
+.. py:function:: StableSwap.exchange_underlying(i: int128, j: int128, dx: uint256, min_dy: uint256) -> uint256
 
     Perform an exchange between two **underlying** tokens. Index values can be found via the ``underlying_coins`` public getter method.
 
+    * ``i``: Index value for the underlying coin to send
+    * ``j``: Index value of the underlying coin to receive
+    * ``_dx``: Amount of `i` being exchanged
+    * ``_min_dy``: Minimum amount of `j` to receive
 
+    Returns the actual amount of coin ``j`` received.
+
+.. note::
+    Older Curve lending pools may not implement the same signature for ``exchange_underlying``. For instance, `Compound pool <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/compound/StableSwapCompound.vy#L474>`_ does not return anything for ``exchange_underlying`` and therefore costs more in terms of gas.
+
+Adding/Removing Liquidity
+-------------------------
+
+The function signatures for adding and removing liquidity to a lending pool are *mostly* the same as for a :ref:`plain pool <liquidity-plain-pools>`. However, for lending pools, liquidity is added and removed in the **wrapped** token, not the underlying.
+
+In order to be able to add and remove liquidity in the underlying token (e.g., remove DAI from Compound Pool instead of cDAI) there exists a ``Deposit<POOL>.vy`` contract (e.g., (`DepositCompound.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/compound/DepositCompound.vy>`_).
+
+.. warning::
+    Older Curve lending pools (e.g., Compound Pool) **do not** implement all plain pool methods for :ref:`adding and removing liquidity <liquidity-plain-pools>`. For instance, ``remove_liquidity_one_coin`` is not implemented by Compound Pool).
+
+Some newer pools (e.g., `IB <https://github.com/curvefi/curve-contract/blob/master/contracts/pools/ib/StableSwapIB.vy>`_) have a modified signature for ``add_liquidity`` and allow the caller to specify whether the deposited liquidity is in the wrapped *or* underlying token.
+
+.. py:function:: StableSwap.add_liquidity(_amounts: uint256[N_COINS], _min_mint_amount: uint256, _use_underlying: bool = False) -> uint256
+
+    Deposit coins into the pool.
+
+    * ``_amounts``: List of amounts of coins to deposit
+    * ``_min_mint_amount``: Minimum amount of LP tokens to mint from the deposit
+    * ``_use_underlying`` If ``True`, deposit underlying assets instead of wrapped assets.
+
+    Returns amount of LP tokens received in exchange for the deposited tokens.
 
 
 Metapools
 =========
 
+A metapool is a pool where a stablecoin is paired against the LP token from another pool.
 
+
+
+The template source code for metapools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/meta/SwapTemplateMeta.vy>`_.
 
 Admin Pool Settings
 ===================
@@ -274,7 +353,7 @@ Pool Ownership
 Amplification Coefficient
 -------------------------
 
-The amplification co-efficient (“A”) determines a pool’s tolerance for imbalance between the assets within it. A higher value means that trades will incure slippage sooner as the assets within the pool become imbalanced.
+The amplification co-efficient (“A”) determines a pool’s tolerance for imbalance between the assets within it. A higher value means that trades will incur slippage sooner as the assets within the pool become imbalanced.
 
 The appropriate value for A is dependent upon the type of coin being used within the pool.
 
@@ -294,6 +373,8 @@ It is possible to modify the amplification coefficient for a pool after it has b
 
 Trade Fees
 ----------
+
+Curve pools charge fees on token swaps, where the fee may differ between pools. An admin fee is charged on the pool fee. For an overview of how fees are distributed, please refer to :ref:`Fee Collection and Distribution <dao-fees>`.
 
 .. py:function:: StableSwap.commit_new_fee(_new_fee: uint256, _new_admin_fee: uint256)
 
@@ -332,6 +413,8 @@ Trade Fees
 
     Donates all admin fees to the pool's liquidity providers.
 
+    .. note::
+        Older Curve pools do not implement this method.
 
 Kill a Pool
 -----------

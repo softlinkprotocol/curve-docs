@@ -4,9 +4,7 @@
 Curve StableSwap Exchange: Deposit Contracts
 ============================================
 
-.. note::
-    Curve Deposit Zaps may differ in their API. Older pools do not implement the newer API templates for `lending <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/y/DepositTemplateY.vy>`_ and `metapool <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/meta/DepositTemplateMeta.vy>`_ deposit zaps.
-
+Curve pools may rely on a different contract, called a *deposit zap* for the addition and removal of underlying coins. This is particularly useful for lending pools, which may only support the addition/removal of wrapped coins. Furthermore, deposit zaps are also useful for metapools, which do not support the addition/removal of base pool coins.
 
 Lending Pool Deposits
 =====================
@@ -18,6 +16,11 @@ For example, the Compound Pool allows swaps between ``cDai`` and ``cUSDC`` (wrap
 For an overview of the Curve lending pool implementation, please refer to the :ref:`Lending Pool <exchange-pools-lending>` section.
 
 The template source code for a lending pool deposit zap may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/y/DepositTemplateY.vy>`_.
+
+
+.. note::
+    Lending pool deposit zaps may differ in their API. Older pools do not implement the newer API templates for `lending <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/y/DepositTemplateY.vy>` deposit zaps.
+
 
 Deposit Zap API (OLD)
 --------------------
@@ -35,7 +38,7 @@ While not a lending pool, note that the following contract also implements the n
     * ``DepositSUSD``: `SUSD pool deposit zap <https://etherscan.io/address/0xfcba3e75865d2d561be8d220616520c171f12851#code>`_
 
 
-Get Deposit Zap information
+Get Deposit Zap Information
 ***************************
 
 .. note::
@@ -133,12 +136,12 @@ Adding/Removing Liquidity
     Donates any LP tokens of the associated pool held by this contract to the contract owner.
 
 
-Deposit Zap API (v2)
+Deposit Zap API (NEW)
 --------------------
 
-Compared to the older deposit zaps, the newer zaps mainly optimize for gas efficiency. The API is only modified in part, specifically with regards to `return` values and variable naming.
+Compared to the older deposit zaps, the newer zaps mainly optimize for gas efficiency. The API is only modified in part, specifically with regards to ``return`` values and variable naming.
 
-Get Deposit Zap information
+Get Deposit Zap Information
 ***************************
 
 .. py:function:: DepositZap.curve() -> address: view
@@ -210,7 +213,7 @@ Metapool Deposits
 
 While Curve metapools support swaps between base pool coins, the base pool LP token and metapool coins, they do not allow liquidity providers to deposit and/or withdraw base pool coins.
 
-For example, the GUSD metapool is a pool consisting of ``GUSD`` and ``3CRV`` (the LP token of the 3CRV pool) and allows for swaps between ``GUSD``, ``DAI``, ``USDC``, ``USDT`` and ``3CRV`` (wrapped coins). However, liquidity providers are not able to deposit ``DAI``, ``USDC`` or ``USDT`` to the pool directly. The main reason why this is not possible lies in the maximum byte code size of contracts. Metapools are complex and can therefore end up being very close to the contract byte code size limit. In order to overcome this restriction, liquidity can be added and removed to and from a metapool in the base pool's coins through a metapool deposit zap.
+For example, the GUSD metapool is a pool consisting of ``GUSD`` and ``3CRV`` (the LP token of the 3Pool) and allows for swaps between ``GUSD``, ``DAI``, ``USDC``, ``USDT`` and ``3CRV``. However, liquidity providers are not able to deposit ``DAI``, ``USDC`` or ``USDT`` to the pool directly. The main reason why this is not possible lies in the maximum byte code size of contracts. Metapools are complex and can therefore end up being very close to the contract byte code size limit. In order to overcome this restriction, liquidity can be added and removed to and from a metapool in the base pool's coins through a metapool deposit zap.
 
 For an overview of the Curve metapool implementation, please refer to the :ref:`Metapool <exchange-pools-meta>` section.
 
@@ -226,7 +229,7 @@ A list of all deployed metapool deposit zaps can be found :ref:`here <addresses-
     * ``N_ALL_COINS``: All coins in the metapool, excluding the base pool LP token (``N_COINS + BASE_N_COINS - 1``)
 
 
-Get Deposit Zap information
+Get Deposit Zap Information
 ---------------------------
 
 .. py:function:: DepositZap.pool() -> address: view

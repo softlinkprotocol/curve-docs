@@ -4,9 +4,7 @@
 Curve StableSwap Exchange: LP Tokens
 ====================================
 
-In exchange for depositing coins into a Curve pool (see :ref:`Curve Pools <exchange-pools>`), liquidity providers receive pool LP tokens. A Curve pool LP token is an ERC20 contract specific to the Curve pool. Hence, LP tokens are transferrable. Holders of pool LP tokens may stake the token into a pool's :ref:`liquidity gauge <dao-gauges>` in order to receive ``CRV`` token rewards. Alternatively, if the LP token is supported by a metapool, the token may be deposited into the respective metapool in exchange for the metapool's LP token.
-
-For example, a liquidity provider may deposit ``DAI`` into 3Pool and in exchange receive the pool's LP token ``3CRV``. The ``3CRV`` LP token may then be deposited into the GUSD metapool, which contains the coins ``GUSD`` and ``3CRV``, in exchange for the metapool's LP token ``gusd3CRV``. The obtained LP token may then be staked in the metapool's liquidity gauge.
+In exchange for depositing coins into a Curve pool (see :ref:`Curve Pools <exchange-pools>`), liquidity providers receive pool LP tokens. A Curve pool LP token is an ERC20 contract specific to the Curve pool. Hence, LP tokens are transferrable. Holders of pool LP tokens may stake the token into a pool's :ref:`liquidity gauge <dao-gauges>` in order to receive ``CRV`` token rewards. Alternatively, if the LP token is supported by a metapool, the token may be deposited into the respective metapool in exchange for the metapool's LP token (see :ref:`here <exchange-pools-meta>`).
 
 The following versions of Curve pool LP tokens exist:
 

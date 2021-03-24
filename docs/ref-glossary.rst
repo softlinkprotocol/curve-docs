@@ -13,6 +13,9 @@ This section is a work in progress - if a term is missing, feel free to `open a 
 Automated Market Maker (AMM)
     A decentralized asset trading pool that allows participants to buy or sell cryptocurrencies.
 
+Base Pool
+    The pool issuing the LP token that is used by a metapool.
+
 Burning
     The process of withdrawing admin fees from the excahange contracts and distributing them to veCRV holders.
 
@@ -25,7 +28,7 @@ LP Token
 .. _glossary-metapool:
 
 Metapool
-    A Curve pool where one of the tradeable assets is the :ref:`LP token<glossary-metapool>` for another pool. Metapools are used to prevent liquidity fragmentation.
+    A Curve pool where one of the tradeable assets is the :ref:`LP token<glossary-metapool>` for another pool (base pool). Metapools are used to prevent liquidity fragmentation.
 
 .. _glossary-underlying-coin:
 

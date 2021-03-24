@@ -8,9 +8,9 @@ A Curve pool is a smart contract that implements the StableSwap invariant and th
 
 More broadly, Curve pools can be split into three categories:
 
-* ``Plain pools``
-* ``Lending pools``
-* ``Metapools``
+* ``Plain pools``: a pool where two or more stablecoins are paired against one another.
+* ``Lending pools``: a pool where two or more *wrapped* tokens (e.g., ``cDAI``) are paird against one another, while the underlying is lent out on some other protocol.
+* ``Metapools``: a pool where a stablecoin is paired against the LP token from another pool.
 
 Source code for Curve pools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/tree/master/contracts>`_.
 
@@ -22,6 +22,8 @@ Source code for Curve pools may be viewed on `GitHub <https://github.com/curvefi
 
 For information on code style please refer to the official :ref:`style guide <guide-code-style>`.
 
+
+.. _exchange-pools-plain:
 
 Plain Pools
 ===========
@@ -252,6 +254,9 @@ Implementation of lending pools may differ with respect to how wrapped tokens ac
 The template source code for lending pools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/y/SwapTemplateY.vy>`_.
 
 
+.. note::
+    Lending pools also implement the API from :ref:`plain pools<exchange-pools-plain>`.
+
 Getting Pool Info
 -----------------
 
@@ -317,11 +322,119 @@ Some newer pools (e.g., `IB <https://github.com/curvefi/curve-contract/blob/mast
 Metapools
 =========
 
-A metapool is a pool where a stablecoin is paired against the LP token from another pool.
+A metapool is a pool where a stablecoin is paired against the LP token from another pool, a so-called *base pool*.
+
+For example, a liquidity provider may deposit ``DAI`` into `3Pool <https://etherscan.io/address/0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7#code>`_ and in exchange receive the pool's LP token ``3CRV``. The ``3CRV`` LP token may then be deposited into the `GUSD metapool <https://etherscan.io/address/0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956>`_, which contains the coins ``GUSD`` and ``3CRV``, in exchange for the metapool's LP token ``gusd3CRV``. The obtained LP token may then be staked in the metapool's liquidity gauge for ``CRV`` rewards.
+
+Metapools provide an opportunity for the base pool liquidity providers to earn additional trading fees by depositing their LP tokens into the metapool. Note that the ``CRV`` rewards received for staking LP tokens into the pool's liquidity gauge may differ for the base pool's liquidity gauge and the metapool's liquidity gauge. For details on liquidity gauges and protocol rewards, please refer to :ref:`Liquidity Gauges and Minting CRV <dao-gauges>`.
+
+.. note::
+    Metapools also implement the API from :ref:`plain pools<exchange-pools-plain>`.
+
+Getting Pool Information
+------------------------
+
+.. py:function:: StableSwap.base_coins(i: uint256) -> address: view
+
+Get the coins of the base pool.
+
+    .. code-block:: python
+
+        >>> metapool.base_coins(0)
+        '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+        >>> metapool.base_coins(1)
+        '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
+        >>> metapool.base_coins(2)
+        '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+
+
+.. py:function:: StableSwap.coins(i: uint256) -> address: view
+
+    Get the coins of the metapool.
+
+    .. code-block:: python
+
+        >>> metapool.coins(0)
+        '0x056Fd409E1d7A124BD7017459dFEa2F387b6d5Cd'
+        >>> metapool.coins(1)
+        '0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490'
+
+    In this console example, ``coins(0)`` is the metapool's coin (``GUSD``) and ``coins(1)`` is the LP token of the base pool (``3CRV``).
+
+
+.. py:function:: StableSwap.base_pool() -> address: view
+
+    Get the address of the base pool.
+
+    .. code-block:: python
+
+        >>> metapool.base_pool()
+        '0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7'
+
+
+.. py:function:: StableSwap.base_virtual_price() -> uint256: view
+
+    Get the current price of the base pool LP token relative to the underlying base pool assets.
+
+    Note that the base pool's virtual price is only fetched from the base pool *if* the cached price has expired. A fetched based pool virtual price is cached for 10 minutes (``BASE_CACHE_EXPIRES: constant(int128) = 10 * 60``).
+
+
+    .. code-block:: python
+
+        >>> metapool.base_virtual_price()
+        1014750545929625438
+
+.. py:function:: StableSwap.base_cache_update() -> uint256: view
+
+    Get the timestamp at which the base pool virtual price was last cached.
+
+    .. code-block:: python
+
+        >>> metapool.base_cache_updated()
+        1616583340
+
+
+
+Making Exchanges
+----------------
+
+Similar to lending pools, on metapools exchanges can be made either between the coins the metapool actually holds (another pool's LP token and some other coin) *or* between the metapool's underlying coins. In the context of a metapool, **underlying** coins refers to the metapool's coin and any of the base pool's coins. The base pool's LP token is **not** included as an underlying coin.
+
+For example, the GUSD metapool would have the following:
+
+    * Coins: ``GUSD``, ``3CRV`` (3Pool LP)
+    * Underlying coins: ``GUSD``, ``DAI``, ``USDC``, ``USDT``
+
+.. note::
+    While metapools contain public getters for ``coins`` and ``base_coins``, there exists **no** getter for obtaining a list of all underlying coins.
+
+.. py:function:: StableSwap.exchange(i: int128, j: int128, _dx: uint256, _min_dy: uint256) -> uint256
+
+    Perform an exchange between two (non-underlying) coins in the metapool. Index values can be found via the ``coins`` public getter method.
+
+    * ``i``: Index value for the coin to send
+    * ``j``: Index valie of the coin to receive
+    * ``_dx``: Amount of ``i`` being exchanged
+    * ``_min_dy``: Minimum amount of ``j`` to receive
+
+    Returns the actual amount of coin ``j`` received.
+
+
+.. py:function:: StableSwap.exchange_underlying(i: int128, j: int128, _dx: uint256, _min_dy: uint256) -> uint256
+
+    Perform an exchange between two underlying coins. Index values are the ``coins`` followed by the ``base_coins``, where the base pool LP token is **not** included as a value.
+
+    * ``i``: Index value for the underlying coin to send
+    * ``j``: Index valie of the underlying coin to recieve
+    * ``_dx``: Amount of ``i`` being exchanged
+    * ``_min_dy``: Minimum amount of underlying coin ``j`` to receive
+
+    Returns the actual amount of underlying coin ``j`` received.
 
 
 
 The template source code for metapools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/meta/SwapTemplateMeta.vy>`_.
+
 
 Admin Pool Settings
 ===================
@@ -371,7 +484,7 @@ It is possible to modify the amplification coefficient for a pool after it has b
 
 .. py:function:: StableSwap.stop_ramp_A()
 
-    Stops ramping ``A`` up or down and sets ``A`` to current ``A``.
+    Stop ramping ``A`` up or down and sets ``A`` to current ``A``.
 
 
 Trade Fees
@@ -381,7 +494,7 @@ Curve pools charge fees on token swaps, where the fee may differ between pools. 
 
 .. py:function:: StableSwap.commit_new_fee(_new_fee: uint256, _new_admin_fee: uint256)
 
-    Commits new pool and admin fees for the pool. These fees do not take immediate effect.
+    Commit new pool and admin fees for the pool. These fees do not take immediate effect.
 
     * ``_new_fee``: New pool fee
     * ``_new_admin_fee``: New admin fee (expressed as a percentage of the pool fee)
@@ -391,7 +504,7 @@ Curve pools charge fees on token swaps, where the fee may differ between pools. 
 
 .. py:function:: StableSwap.apply_new_fee()
 
-    Applies the previously committed new pool and admin fees for the pool.
+    Apply the previously committed new pool and admin fees for the pool.
 
     .. note::
         Unlike ownership transfers, pool and admin fees may be set more than once.
@@ -414,7 +527,7 @@ Curve pools charge fees on token swaps, where the fee may differ between pools. 
 
 .. py:function:: StableSwap.donate_admin_fees()
 
-    Donates all admin fees to the pool's liquidity providers.
+    Donate all admin fees to the pool's liquidity providers.
 
     .. note::
         Older Curve pools do not implement this method.

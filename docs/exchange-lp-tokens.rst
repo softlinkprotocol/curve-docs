@@ -12,14 +12,12 @@ The following versions of Curve pool LP tokens exist:
 
 * `CurveTokenV1 <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV1.vy>`_: LP token targetting Vyper `^0.1.0-beta.16 <https://vyper.readthedocs.io/en/stable/release-notes.html#v0-1-0-beta-16>`_
 * `CurveTokenV2 <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_: LP token targetting Vyper `^0.2.0 <https://vyper.readthedocs.io/en/stable/release-notes.html#v0-2-1>`_
-* `CurveTokenV3 <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_: LP token
+* `CurveTokenV3 <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_: LP token targetting Vyper `^0.2.0 <https://vyper.readthedocs.io/en/stable/release-notes.html#v0-2-1>`_ with gas optimizations
 
 The version of each pool's LP token can be found in the :ref:`Deployment Addresses <addresses-overview>`.
 
 .. note::
     For older Curve pools the ``token`` attribute is not always ``public`` and a getter has not been explicitly implemented.
-
-
 
 
 Curve Token V1
@@ -162,13 +160,15 @@ Curve Token V2
 
 The implementation for a Curve Token V2 may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV2.vy>`_.
 
-Compared to Curve Token v1, the following changes have been made to the API:
+.. note::
+    Compared to Curve Token v1, the following changes have been made to the API:
 
-    * ``minter`` attribute is ``public`` and therefore a minter getter has been generated
-    * ``name`` and ``symbol`` attributes can be set via ``set_name``
-    * ``mint`` method returns ``bool``
-    * ``burnFrom`` method returns ``bool``
-    * ``burn`` method has been removed
+        * ``minter`` attribute is ``public`` and therefore a minter getter has been generated
+        * ``name`` and ``symbol`` attributes can be set via ``set_name``
+        * ``mint`` method returns ``bool``
+        * ``burnFrom`` method returns ``bool``
+        * ``burn`` method has been removed
+
 
 .. py:function:: CurveToken.minter() -> address: view
 
@@ -205,4 +205,35 @@ Compared to Curve Token v1, the following changes have been made to the API:
 Curve Token V3
 ==============
 
+The Curve Token V3 is more gas efficient than versions 1 and 2.
+
+.. note::
+    Compared to the Curve Token V2 API, there have been the following changes:
+
+    * ``increaseAllowance`` and ``decreaseAllowance`` methods added to mitigate race conditions
+
 The implementation for a Curve Token V3 may be viewed on `GitHub <https://github.com/curvefi/curve-contract/blob/master/contracts/tokens/CurveTokenV3.vy>`_.
+
+
+.. py:function:: CurveToken.increaseAllowance(_spender: address, _added_value: uint256) -> bool
+
+    Increase the allowance granted to ``_spender`` by the ``msg.sender``.
+
+    This is alternative to ``approve`` that can be used as a mitigation for the potential race condition.
+
+    * ``_spender``: Address which will transfer the funds
+    * ``_added_value``: Amount of to increase the allowance
+
+    Returns ``True`` if success.
+
+
+.. py:function:: CurveToken.decreaseAllowance(_spender: address, _subtracted_value: uint256) -> bool
+
+    Decrease the allowance granted to ``_spender`` by the ``msg.sender``.
+
+    This is alternative to {approve} that can be used as a mitigation for the potential race condition.
+
+    * ``_spender``: Address which will transfer the funds
+    * ``_subtracted_value``: Amount of to decrease the allowance
+
+    Returns ``True`` if success.

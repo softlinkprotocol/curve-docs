@@ -1,9 +1,9 @@
 .. _overview:
 
 
-==================
-Registry: Overview
-==================
+========
+Registry
+========
 
 The Curve registry contracts are open source and may be `found on Github <https://github.com/curvefi/curve-pool-registry>`_.
 

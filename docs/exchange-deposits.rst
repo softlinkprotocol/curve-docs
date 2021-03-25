@@ -19,7 +19,7 @@ The template source code for a lending pool deposit zap may be viewed on `GitHub
 
 
 .. note::
-    Lending pool deposit zaps may differ in their API. Older pools do not implement the newer API templates for `lending <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/y/DepositTemplateY.vy>` deposit zaps.
+    Lending pool deposit zaps may differ in their API. Older pools do not implement the newer `API template <https://github.com/curvefi/curve-contract/blob/master/contracts/pool-templates/y/DepositTemplateY.vy>`_.
 
 
 Deposit Zap API (OLD)
@@ -122,7 +122,6 @@ Adding/Removing Liquidity
     * ``_token_amount``: Amount of LP tokens to burn in the withdrawal
     * ``i``: Index value of the coin to withdraw
     * ``min_uamount``: Minimum amount of underlying coin to receive
-    * ``donate_dust``: Donates any dust if ``True``
 
 .. py:function:: DepositZap.calc_withdraw_one_coin(_token_amount: uint256, i: int128) -> uint256
 

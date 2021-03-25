@@ -64,9 +64,10 @@ The implementation for a Curve Token V1 may be viewed on `GitHub <https://github
 
 
 .. py:function:: CurveToken.totalSupply() -> uint256: view
-    .. code-block:: python
 
     Get the total token supply.
+
+    .. code-block:: python
 
         >>> lp_token.totalSupply()
         73112516629065063732935484
@@ -113,6 +114,9 @@ The implementation for a Curve Token V1 may be viewed on `GitHub <https://github
     * ``_value``: Amount of tokens to be spent.
 
     Returns ``True`` if approval succeeded.
+
+    .. warning::
+        For Curve LP Tokens V1 and V2, **non-zero to non-zero approvals are prohibited**. Instead, after every non-zero approval, the allowance for the spender **must** be reset to ``0``.
 
 
 Minter Methods
@@ -166,6 +170,9 @@ The implementation for a Curve Token V2 may be viewed on `GitHub <https://github
         * ``mint`` method returns ``bool``
         * ``burnFrom`` method returns ``bool``
         * ``burn`` method has been removed
+
+.. warning::
+    For Curve LP Tokens V1 and V2, **non-zero to non-zero approvals are prohibited**. Instead, after every non-zero approval, the allowance for the spender **must** be reset to ``0``.
 
 
 .. py:function:: CurveToken.minter() -> address: view

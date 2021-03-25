@@ -471,6 +471,9 @@ Amplification Coefficient
 
 The amplification co-efficient (“A”) determines a pool’s tolerance for imbalance between the assets within it. A higher value means that trades will incur slippage sooner as the assets within the pool become imbalanced.
 
+.. note::
+     Within the pools, ``A`` is in fact implemented as ``1 / A`` and therefore a higher value implies that the pool will be **more** tolerant to slippage when imbalanced.
+
 The appropriate value for A is dependent upon the type of coin being used within the pool.
 
 It is possible to modify the amplification coefficient for a pool after it has been deployed. However, it requires a vote within the Curve DAO and must reach a 15% quorum.
@@ -546,6 +549,9 @@ Kill a Pool
     * ``remove_liquidity_one_coin``
 
     Hence, when paused, it is only possible for existing LPs to remove liquidity via ``remove_liquidity``.
+
+    .. note::
+        Pools can only be killed within the first 30 days after deployment.
 
 .. py:function:: StableSwap.unkill_me()
 

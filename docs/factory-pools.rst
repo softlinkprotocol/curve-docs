@@ -29,7 +29,7 @@ When interacting with a factory pool you should use the ABI at the corresponding
 Getting Pool Info
 =================
 
-.. py:function:: StableSwap.coins(i: uint256) -> uint256: view
+.. py:function:: StableSwap.coins(i: uint256) -> address: view
 
     Getter for the array of swappable coins within the pool. The last coin will always be the LP token of the base pool.
 

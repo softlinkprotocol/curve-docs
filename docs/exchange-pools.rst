@@ -9,7 +9,7 @@ A Curve pool is a smart contract that implements the StableSwap invariant and th
 More broadly, Curve pools can be split into three categories:
 
 * ``Plain pools``: a pool where two or more stablecoins are paired against one another.
-* ``Lending pools``: a pool where two or more *wrapped* tokens (e.g., ``cDAI``) are paird against one another, while the underlying is lent out on some other protocol.
+* ``Lending pools``: a pool where two or more *wrapped* tokens (e.g., ``cDAI``) are paired against one another, while the underlying is lent out on some other protocol.
 * ``Metapools``: a pool where a stablecoin is paired against the LP token from another pool.
 
 Source code for Curve pools may be viewed on `GitHub <https://github.com/curvefi/curve-contract/tree/master/contracts>`_.

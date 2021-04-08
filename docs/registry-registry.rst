@@ -289,6 +289,38 @@ Gas Estimates
 
     Get an estimate on the upper bound for gas used in an exchange.
 
+Pool Metadata
+*************
+
+.. py:function:: Registry.is_meta(pool: address) -> bool: view
+
+    Get a boolean identifying whether ``pool`` is a metapool.
+
+    .. code-block:: python
+
+        >>> registry.is_meta('0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956')
+        True
+
+.. py:function:: Registry.get_pool_name(pool: address) -> String[64]: view
+
+    Get the name given to a pool upon registration.
+
+    .. code-block:: python
+
+        >>> registry.get_pool_name('0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956')
+        'gusd'
+
+.. py:function:: Registry.get_pool_asset_type(pool: address) -> uint256: view
+
+    Get the asset type of specific ``pool`` as an integer.
+
+    .. note:: The asset type of a pool is subject to modification, and is primarily of use to off-chain integrators.
+
+    .. code-block:: python
+
+        >>> registry.get_pool_asset_type('0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956')
+        0
+
 Gauges
 ------
 

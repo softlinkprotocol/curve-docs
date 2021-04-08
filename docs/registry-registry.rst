@@ -382,3 +382,15 @@ Getting Coins and Coin Swap Complements
 
             >>> registry.get_coin_swap_complement('0x6B175474E89094C44Da98b954EedeAC495271d0F', 0)
             '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
+
+Registry Metadata
+-----------------
+
+.. py.function:: Registry.last_updated() -> uint256:: view
+
+    Get the epoch time of the last registry update.
+
+    .. code.block:: python
+
+        >>> registry.last_updated()
+        1617850905

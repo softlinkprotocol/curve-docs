@@ -390,6 +390,8 @@ Registry Metadata
 
     Get the epoch time of the last registry update.
 
+    Only successful state modifying functions (``add_pool``, ``add_metapool``, ``set_pool_gas_estimates``, etc.) will update this return value.
+
     .. code-block:: python
 
         >>> registry.last_updated()

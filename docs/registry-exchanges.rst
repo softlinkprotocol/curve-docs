@@ -32,6 +32,17 @@ Finding Pools and Swap Rates
 
     Returns the address of the pool offering the best rate, and the expected amount received in the swap.
 
+.. py:function:: Swaps.get_best_rate(_from: address, _to: address, _amount: uint256, _exclude_pools: address[8]) -> (address, uint256): view
+
+Find the pool offering the best rate for a given swap.
+
+* ``_from``: Address of coin being sent.
+* ``_to``: Address of coin being received.
+* ``_amount``: Quantity of `_from` being sent.
+* ``_exclude_pools``: A list of up to 8 addresses which should be excluded from the query.
+
+Returns the address of the pool offering the best rate, and the expected amount received in the swap.
+
 .. py:function:: Swaps.get_exchange_amount(_pool: address, _from: address, _to: address, _amount: uint256) -> uint256: view
 
     Get the current number of coins received in an exchange.

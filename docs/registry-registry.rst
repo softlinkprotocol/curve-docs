@@ -365,7 +365,7 @@ Getting Coins and Coin Swap Complements
             >>> registry.get_coin(0)
             '0x6B175474E89094C44Da98b954EedeAC495271d0F'
 
-.. py.function:: Registry.get_coin_swap_count(coin: address) -> uint256: view
+.. py:function:: Registry.get_coin_swap_count(coin: address) -> uint256: view
 
     Get the total number of unique swaps available for ``coin``.
 
@@ -374,7 +374,7 @@ Getting Coins and Coin Swap Complements
             >>> registry.get_coin_swap_count('0x6B175474E89094C44Da98b954EedeAC495271d0F')
             12
 
-.. py.function:: Registry.get_coin_swap_complement(coin: address, i: uint256) -> address: view
+.. py:function:: Registry.get_coin_swap_complement(coin: address, i: uint256) -> address: view
 
     Get the *ith* unique coin available for swapping against ``coin`` across all registered curve pools.
 
@@ -386,11 +386,11 @@ Getting Coins and Coin Swap Complements
 Registry Metadata
 -----------------
 
-.. py.function:: Registry.last_updated() -> uint256:: view
+.. py:function:: Registry.last_updated() -> uint256:: view
 
     Get the epoch time of the last registry update.
 
-    .. code.block:: python
+    .. code-block:: python
 
         >>> registry.last_updated()
         1617850905

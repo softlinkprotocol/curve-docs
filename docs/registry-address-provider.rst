@@ -47,7 +47,7 @@ View Functions
     .. code-block:: python
 
         >>> provider.get_registry()
-        '0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c'
+        '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5'
 
 .. py:function:: AddressProvider.get_address(id: uint256) -> address: view
 

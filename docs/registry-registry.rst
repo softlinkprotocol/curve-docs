@@ -18,7 +18,7 @@ Use the :func:`get_registry<AddressProvider.get_registry>` method to get the add
 
         >>> provider = Contract('0x0000000022D53366457F9d5E68Ec105046FC4383')
         >>> provider.get_registry()
-        '0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c'
+        '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5'
 
 View Functions
 ==============

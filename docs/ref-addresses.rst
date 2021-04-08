@@ -260,8 +260,7 @@ Here is a list of all components of the pool registry currently in use:
    Address Provider, `AddressProvider.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/AddressProvider.vy>`_, `0x0000000022d53366457f9d5e68ec105046fc4383 <https://etherscan.io/address/0x0000000022d53366457f9d5e68ec105046fc4383#code>`_
    Curve Calculator, `CurveCalc.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/CurveCalc.vy>`_, `0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E <https://etherscan.io/address/0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E#code>`_
    Pool Info, `PoolInfo.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/PoolInfo.vy>`_, `0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C <https://etherscan.io/address/0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C#code>`_
-   Registry, `Registry.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_, `0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c <https://etherscan.io/address/0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c#code>`_
-
+   Registry, `Registry.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_, `0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5 <https://etherscan.io/address/0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5#code>`_
 
 MetaPool Factory
 ================

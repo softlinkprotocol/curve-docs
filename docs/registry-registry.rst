@@ -18,7 +18,7 @@ Use the :func:`get_registry<AddressProvider.get_registry>` method to get the add
 
         >>> provider = Contract('0x0000000022D53366457F9d5E68Ec105046FC4383')
         >>> provider.get_registry()
-        '0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c'
+        '0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5'
 
 View Functions
 ==============
@@ -289,6 +289,38 @@ Gas Estimates
 
     Get an estimate on the upper bound for gas used in an exchange.
 
+Pool Metadata
+*************
+
+.. py:function:: Registry.is_meta(pool: address) -> bool: view
+
+    Get a boolean identifying whether ``pool`` is a metapool.
+
+    .. code-block:: python
+
+        >>> registry.is_meta('0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956')
+        True
+
+.. py:function:: Registry.get_pool_name(pool: address) -> String[64]: view
+
+    Get the name given to a pool upon registration.
+
+    .. code-block:: python
+
+        >>> registry.get_pool_name('0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956')
+        'gusd'
+
+.. py:function:: Registry.get_pool_asset_type(pool: address) -> uint256: view
+
+    Get the asset type of specific ``pool`` as an integer.
+
+    .. note:: The asset type of a pool is subject to modification, and is primarily of use to off-chain integrators.
+
+    .. code-block:: python
+
+        >>> registry.get_pool_asset_type('0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956')
+        0
+
 Gauges
 ------
 
@@ -309,3 +341,58 @@ Gauges
 
             >>> registry.get_gauges('0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27')
             (('0x8474DdbE98F5aA3179B3B3F5942D724aFcdec9f6', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000'), (0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+
+Getting Coins and Coin Swap Complements
+---------------------------------------
+
+.. py:function:: Registry.coin_count() -> uint256: view
+
+    Get the total number of unique coins throughout all registered curve pools.
+
+        .. code-block:: python
+
+            >>> registry.coin_count()
+            42
+
+.. py:function:: Registry.get_coin(i: uint256) -> address: view
+
+    Get the *ith* unique coin throughout all registered curve pools.
+
+    Returns ``0x0000000000000000000000000000000000000000`` for values of *i* greater than the return value of :func:`Registry.coin_count <Registry.coin_count>`.
+
+        .. code-block:: python
+
+            >>> registry.get_coin(0)
+            '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+
+.. py:function:: Registry.get_coin_swap_count(coin: address) -> uint256: view
+
+    Get the total number of unique swaps available for ``coin``.
+
+        .. code-block:: python
+
+            >>> registry.get_coin_swap_count('0x6B175474E89094C44Da98b954EedeAC495271d0F')
+            12
+
+.. py:function:: Registry.get_coin_swap_complement(coin: address, i: uint256) -> address: view
+
+    Get the *ith* unique coin available for swapping against ``coin`` across all registered curve pools.
+
+        .. code-block:: python
+
+            >>> registry.get_coin_swap_complement('0x6B175474E89094C44Da98b954EedeAC495271d0F', 0)
+            '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
+
+Registry Metadata
+-----------------
+
+.. py:function:: Registry.last_updated() -> uint256:: view
+
+    Get the epoch time of the last registry update.
+
+    Only successful state modifying functions (``add_pool``, ``add_metapool``, ``set_pool_gas_estimates``, etc.) will update this return value.
+
+    .. code-block:: python
+
+        >>> registry.last_updated()
+        1617850905

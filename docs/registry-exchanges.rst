@@ -22,13 +22,14 @@ The exchange contract is registered in the address provider with ID ``2``. To ge
 Finding Pools and Swap Rates
 ============================
 
-.. py:function:: Swaps.get_best_rate(_from: address, _to: address, _amount: uint256) -> (address, uint256): view
+.. py:function:: Swaps.get_best_rate(_from: address, _to: address, _amount: uint256, _exclude_pools: address[8]) -> (address, uint256): view
 
     Find the pool offering the best rate for a given swap.
 
     * ``_from``: Address of coin being sent.
     * ``_to``: Address of coin being received.
     * ``_amount``: Quantity of `_from` being sent.
+    * ``_exclude_pools``: [optional] A list of up to 8 addresses which should be excluded from the query.
 
     Returns the address of the pool offering the best rate, and the expected amount received in the swap.
 

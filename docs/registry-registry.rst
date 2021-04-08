@@ -309,3 +309,44 @@ Gauges
 
             >>> registry.get_gauges('0x79a8C46DeA5aDa233ABaFFD40F3A0A2B1e5A4F27')
             (('0x8474DdbE98F5aA3179B3B3F5942D724aFcdec9f6', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000', '0x0000000000000000000000000000000000000000'), (0, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+
+Getting Coins and Coin Swap Complements
+---------------------------------------
+
+.. py:function:: Registry.coin_count() -> uint256: view
+
+    Get the total number of unique coins throughout all registered curve pools.
+
+        .. code-block:: python
+
+            >>> registry.coin_count()
+            42
+
+.. py:function:: Registry.get_coin(i: uint256) -> address: view
+
+    Get the *ith* unique coin throughout all registered curve pools.
+
+    Returns ``0x0000000000000000000000000000000000000000`` for values of *i* greater than the return value of :func:`Registry.coin_count <Registry.coin_count>`.
+
+        .. code-block:: python
+
+            >>> registry.get_coin(0)
+            '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+
+.. py.function:: Registry.get_coin_swap_count(coin: address) -> uint256: view
+
+    Get the total number of unique swaps available for ``coin``.
+
+        .. code-block:: python
+
+            >>> registry.get_coin_swap_count('0x6B175474E89094C44Da98b954EedeAC495271d0F')
+            12
+
+.. py.function:: Registry.get_coin_swap_complement(coin: address, i: uint256) -> address: view
+
+    Get the *ith* unique coin available for swapping against ``coin`` across all registered curve pools.
+
+        .. code-block:: python
+
+            >>> registry.get_coin_swap_complement('0x6B175474E89094C44Da98b954EedeAC495271d0F', 0)
+            '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'

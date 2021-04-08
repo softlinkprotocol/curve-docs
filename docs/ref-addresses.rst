@@ -63,7 +63,7 @@ Here is a list of all base pool contracts currently in use:
 
 .. _addresses-metapools:
 
-Meta Pools
+MetaPools
 ==========
 
 Metapools allow for one token to seemingly trade with another underlying base pool. For instance, the GUSD metapool (``[GUSD, [3Pool]]``) contains GUSD and LP tokens of the 3pool (3CRV). This allows for trades between GUSD and any of the three tokens from the 3Pool (DAI, USDC and USDT).
@@ -261,3 +261,46 @@ Here is a list of all components of the pool registry currently in use:
    Curve Calculator, `CurveCalc.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/CurveCalc.vy>`_, `0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E <https://etherscan.io/address/0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E#code>`_
    Pool Info, `PoolInfo.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/PoolInfo.vy>`_, `0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C <https://etherscan.io/address/0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C#code>`_
    Registry, `Registry.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_, `0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c <https://etherscan.io/address/0x7D86446dDb609eD0F5f8684AcF30380a356b2B4c#code>`_
+
+
+MetaPool Factory
+================
+
+The metapool factory allows for the permissionless deployment of Curve metapools. As discussed :ref:`here<factory-overview>`, the metapool factory has the following core components:
+
+* The :ref:`factory<factory-deployer>` is the main contract used to deploy new metapools. It also acts a registry for finding the deployed pools and querying information about them.
+* :ref:`Pools<factory-pools>` are deployed via a proxy contract. The implementation contract targetted by the proxy is determined according to the base pool. This is the same technique used to create pools in Uniswap V1.
+* :ref:`Deposit contracts<factory-deposits>` ("zaps") are used for wrapping and unwrapping underlying assets when depositing into or withdrawing from pools.
+
+.. csv-table::
+   :header: "Name", "Source", "Address"
+
+   Factory, `Factory.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/Factory.vy>`_, `0x0959158b6040D32d04c301A72CBFD6b39E21c9AE <https://etherscan.io/address/0x0959158b6040D32d04c301A72CBFD6b39E21c9AE>`_
+   Migrator, `PoolMigrator.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/PoolMigrator.vy>`_, `0xd6930b7f661257DA36F93160149b031735237594 <https://etherscan.io/address/0xd6930b7f661257DA36F93160149b031735237594>`_
+
+
+Implementation Contracts
+------------------------
+
+The implementation contracts used for factory metapools are deployed to the mainnet at the following addresses:
+
+.. csv-table::
+   :header: "Name", "Source", "Address"
+
+   3pool, `MetaImplementationUSD.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/MetaImplementationUSD.vy>`_, `0x5F890841f657d90E081bAbdB532A05996Af79Fe6 <https://etherscan.io/address/0x5F890841f657d90E081bAbdB532A05996Af79Fe6>`_
+   sBTC, `MetaImplementationBTC.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/MetaImplementationBTC.vy>`_, `0x2f956eee002b0debd468cf2e0490d1aec65e027f <https://etherscan.io/address/0x2f956eee002b0debd468cf2e0490d1aec65e027f>`_
+
+
+Deposit Zaps
+------------
+
+Deposit zaps for factory metapools are deployed to the mainnet at the following addresses:
+
+.. csv-table::
+   :header: "Name", "Source", "Address"
+
+   3pool Deposit Zap, `DepositZapUSD.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/DepositZapUSD.vy>`_, `0xA79828DF1850E8a3A3064576f380D90aECDD3359 <https://etherscan.io/address/0xa79828df1850e8a3a3064576f380d90aecdd3359>`_
+   sBTC Deposit Zap, `DepositZapBTC.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/DepositZapBTC.vy>`_, `0x7AbDBAf29929e7F8621B757D2a7c04d78d633834  <https://etherscan.io/address/0x7abdbaf29929e7f8621b757d2a7c04d78d633834>`_
+
+
+See a deployed contract that is missing or an address which is not up to date? Feel free to create a pull request as specified `here <https://github.com/curvefi/curve-docs>`_.

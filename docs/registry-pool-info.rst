@@ -77,6 +77,8 @@ View Functions
             rates: uint256[MAX_COINS]
             lp_token: address
             params: PoolParams
+            is_meta: bool
+            name: String[64]
 
         # this struct is nested inside `PoolInfo`
         struct PoolParams:
@@ -103,5 +105,7 @@ View Functions
             'params': (500, 500, 4000000, 5000000000, 4000000, 5000000000, "0x56295b752e632f74a6526988eaCE33C25c52c623", 0, 0, 0),
             'rates': (1039246194444517276, 1018480818866816704, 1024994762508449404, 1015710534981182027, 0, 0, 0, 0),
             'underlying_balances': (11876673238657763875985115, 48715288826971602262153927, 46553938775335128958626025, 49543900767165234117573778, 0, 0, 0, 0),
-            'underlying_decimals': (18, 6, 6, 18, 0, 0, 0, 0)
+            'underlying_decimals': (18, 6, 6, 18, 0, 0, 0, 0),
+            'is_meta': False,
+            'name': 'busd'
         }

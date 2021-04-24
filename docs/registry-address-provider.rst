@@ -99,3 +99,4 @@ Address IDs
 * ``1``: Aggregate getter methods for querying large data sets about a single pool. Designed for off-chain use.
 * ``2``: Generalized swap contract. Used for finding rates and performing exchanges.
 * ``3``: The :ref:`metapool factory<factory-deployer>`.
+* ``4``: The :ref:`fee distributor<dao-fees-distributor>`. Used to distribute collected fees to veCRV holders.

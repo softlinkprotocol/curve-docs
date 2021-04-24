@@ -261,6 +261,7 @@ Here is a list of all components of the pool registry currently in use:
    Curve Calculator, `CurveCalc.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/CurveCalc.vy>`_, `0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E <https://etherscan.io/address/0xc1DB00a8E5Ef7bfa476395cdbcc98235477cDE4E#code>`_
    Pool Info, `PoolInfo.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/PoolInfo.vy>`_, `0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C <https://etherscan.io/address/0xe64608E223433E8a03a1DaaeFD8Cb638C14B552C#code>`_
    Registry, `Registry.vy <https://github.com/curvefi/curve-pool-registry/blob/master/contracts/Registry.vy>`_, `0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5 <https://etherscan.io/address/0x90E00ACe148ca3b23Ac1bC8C240C2a7Dd9c2d7f5#code>`_
+   Fee Distributor, `FeeDistributor.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/FeeDistributor.vy>`_, `0xA464e6DCda8AC41e03616F95f4BC98a13b8922Dc <https://etherscan.io/address/0xA464e6DCda8AC41e03616F95f4BC98a13b8922Dc#code>`_
 
 MetaPool Factory
 ================

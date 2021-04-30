@@ -114,9 +114,9 @@ The following getter methods are available for finding pools that were deployed 
 
     Note that because factory-deployed pools are not killable, they also cannot be removed from the registry. For this reason the ordering of pools within this array will never change.
 
-.. py:function:: Registry.find_pool_for_coins(_from: address, _to: address, i: uint256 = 0) -> address: view
+.. py:function:: Factory.find_pool_for_coins(_from: address, _to: address, i: uint256 = 0) -> address: view
 
-    Finds a pool that allows for swaps between ``_from`` and ``_to``. You can optionally include ``i`` to get the n-th pool, when multiple pools exist for the given pairing.
+    Finds a pool that allows for swaps between ``_from`` and ``_to``. You can optionally include ``i`` to get the i-th pool, when multiple pools exist for the given pairing.
 
     The order of ``_from`` and ``_to`` does not affect the result.
 

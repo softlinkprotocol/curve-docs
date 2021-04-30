@@ -190,7 +190,7 @@ The following contracts allow DAO ownership of the core Curve AMM contracts:
    :header: "Name", "Source", "Address"
 
    Gauge Owner, `GaugeProxy.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/GaugeProxy.vy>`_, `0x519AFB566c05E00cfB9af73496D00217A630e4D5 <https://etherscan.io/address/0x519AFB566c05E00cfB9af73496D00217A630e4D5#code>`_
-   Pool Owner, `PoolProxy.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/PoolProxy.vy>`_, `0x6e8f6D1DA6232d5E40b0B8758A0145D6C5123eB7 <https://etherscan.io/address/0x6e8f6D1DA6232d5E40b0B8758A0145D6C5123eB7#code>`_
+   Pool Owner, `PoolProxy.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/PoolProxy.vy>`_, `0xeCb456EA5365865EbAb8a2661B0c503410e9B347 <https://etherscan.io/address/0xeCb456EA5365865EbAb8a2661B0c503410e9B347#code>`_
    Factory Pool Owner, `OwnerProxy.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/OwnerProxy.vy>`_, `0x8cf8af108b3b46ddc6ad596aebb917e053f0d72b <https://etherscan.io/address/0x8cf8af108b3b46ddc6ad596aebb917e053f0d72b>`_
 
 

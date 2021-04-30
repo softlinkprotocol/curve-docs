@@ -314,3 +314,20 @@ Deposit zaps for factory metapools are deployed to the mainnet at the following 
 
    3pool Deposit Zap, `DepositZapUSD.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/DepositZapUSD.vy>`_, `0xA79828DF1850E8a3A3064576f380D90aECDD3359 <https://etherscan.io/address/0xa79828df1850e8a3a3064576f380d90aecdd3359>`_
    sBTC Deposit Zap, `DepositZapBTC.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/DepositZapBTC.vy>`_, `0x7AbDBAf29929e7F8621B757D2a7c04d78d633834  <https://etherscan.io/address/0x7abdbaf29929e7f8621b757d2a7c04d78d633834>`_
+
+
+Other Chains
+============
+
+Polygon
+-------
+
+Curve has several contracts deployed on `Polygon <https://polygon.technology/>`_. UI for these contracts is available at `polygon.curve.fi <https://polygon.curve.fi>`_.
+
+.. csv-table::
+   :header: "Name", "Source", "Address"
+
+   Aave Pool, `StableSwapAave.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/pools/aave/StableSwapAave.vy>`_, `0x445FE580eF8d70FF569aB36e80c647af338db351 <https://explorer-mainnet.maticvigil.com/address/0x445FE580eF8d70FF569aB36e80c647af338db351>`_
+   Aave LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/CurveTokenV3.vy>`_, `0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171 <https://explorer-mainnet.maticvigil.com/address/0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171>`_
+   Aave Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0xe381C25de995d62b453aF8B931aAc84fcCaa7A62 <https://explorer-mainnet.maticvigil.com/address/0xe381C25de995d62b453aF8B931aAc84fcCaa7A62>`_
+   WMATIC Distributor, `RewardStream.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/RewardStream.vy>`_, `0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0 <https://explorer-mainnet.maticvigil.com/address/0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0>`_

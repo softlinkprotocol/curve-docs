@@ -6,6 +6,10 @@ Deployment Addresses
 
 Here is a list of all current contract deployments within the Curve protocol.
 
+.. note::
+
+    If you find an address which is missing or incorrect, feel free to create a pull request as specified `here <https://github.com/curvefi/curve-docs>`_.
+
 Base Pools
 ==========
 
@@ -301,6 +305,3 @@ Deposit zaps for factory metapools are deployed to the mainnet at the following 
 
    3pool Deposit Zap, `DepositZapUSD.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/DepositZapUSD.vy>`_, `0xA79828DF1850E8a3A3064576f380D90aECDD3359 <https://etherscan.io/address/0xa79828df1850e8a3a3064576f380d90aecdd3359>`_
    sBTC Deposit Zap, `DepositZapBTC.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/DepositZapBTC.vy>`_, `0x7AbDBAf29929e7F8621B757D2a7c04d78d633834  <https://etherscan.io/address/0x7abdbaf29929e7f8621b757d2a7c04d78d633834>`_
-
-
-See a deployed contract that is missing or an address which is not up to date? Feel free to create a pull request as specified `here <https://github.com/curvefi/curve-docs>`_.

@@ -197,12 +197,12 @@ The following contracts allow DAO ownership of the core Curve AMM contracts:
 .. _addresses-aragon:
 
 Aragon
-======
+------
 
 Main documentation: :ref:`Curve DAO: Governance<dao-voting>`
 
 Voting App
-----------
+**********
 
 Aragon `Voting App <https://wiki.aragon.org/archive/dev/apps/voting/>`_ deployments are the main entry points used to create new votes, vote, checking the status of a vote, and execute a successful vote.
 
@@ -213,9 +213,8 @@ Aragon `Voting App <https://wiki.aragon.org/archive/dev/apps/voting/>`_ deployme
    Parameter, `0xBCfF8B0b9419b9A88c44546519b1e909cF330399 <https://etherscan.io/address/0xbcff8b0b9419b9a88c44546519b1e909cf330399>`_
    Emergency, `0x1115c9b3168563354137cDc60efb66552dd50678 <https://etherscan.io/address/0x1115c9b3168563354137cdc60efb66552dd50678>`_
 
-
 Agent
------
+*****
 
 Aragon `Agent <https://hack.aragon.org/docs/guides-use-agent>`_ deployments correspond to the different owner accounts within the DAO. Contract calls made as a result of a successful vote will execute from these addresses. When deploying new contracts, these addresses should be given appropriate access to admin functionality.
 
@@ -227,7 +226,7 @@ Aragon `Agent <https://hack.aragon.org/docs/guides-use-agent>`_ deployments corr
    Emergency, `0x00669DF67E4827FCc0E48A1838a8d5AB79281909 <https://etherscan.io/address/0x00669DF67E4827FCc0E48A1838a8d5AB79281909>`_
 
 Tokens
-------
+******
 
 The following token addresses are used for determining voter weights within Curve's Aragon DAOs.
 
@@ -238,7 +237,7 @@ The following token addresses are used for determining voter weights within Curv
    Emergency, `0x4c0947B16FB1f755A2D32EC21A0c4181f711C500 <https://etherscan.io/address/0x4c0947B16FB1f755A2D32EC21A0c4181f711C500>`_
 
 Fee Burners
-===========
+-----------
 
 Burners are a fundamental component of the fee payout mechanism in Curve. A burner converts collected pool fees to an asset which can be converted to USDC. Ultimately, the exchanged for USDC is deposited to the 3Pool, as fees are paid out in 3CRV to veCRV holders. Depending on which tokens a pool contains, a specific burner implementation is used.
 
@@ -248,10 +247,7 @@ Here is a list of all burner contracts currently in use:
    :header: "Gauge", "Source", "Address"
 
    ABurner, `ABurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ABurner.vy>`_, `0x12220a63a2013133d54558c9d03c35288eac9b34 <https://etherscan.io/address/0x12220a63a2013133d54558c9d03c35288eac9b34#code>`_
-   BTCBurner, `BTCBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/BTCBurner.vy>`_, `0xf9fc73496484290142ee856639f69e04465985cd <https://etherscan.io/address/0xf9fc73496484290142ee856639f69e04465985cd#code>`_
    CBurner, `CBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/CBurner.vy>`_, `0xdd0e10857d952c73b2fa39ce86308299df8774b8 <https://etherscan.io/address/0xdd0e10857d952c73b2fa39ce86308299df8774b8#code>`_
-   ETHBurner, `ETHBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/ETHBurner.vy>`_, `0xe1ea5d59082bb2165b1bbb93d85492e671fd0969 <https://etherscan.io/address/0xe1ea5d59082bb2165b1bbb93d85492e671fd0969#code>`_
-   EuroBurner, `EuroBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/EuroBurner.vy>`_, `0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0 <https://etherscan.io/address/0xcfbd5a821d5fc6bd311abe584e1455d8552b58c0#code>`_
    LPBurner, `LPBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/LPBurner.vy>`_, `0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81 <https://etherscan.io/address/0xaa42C0CD9645A58dfeB699cCAeFBD30f19B1ff81#code>`_
    MetaBurner, `MetaBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/MetaBurner.vy>`_, `0xE4b65889469ad896e866331f0AB5652C1EcfB3E6 <https://etherscan.io/address/0xE4b65889469ad896e866331f0AB5652C1EcfB3E6#code>`_
    SynthBurner, `SynthBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/SynthBurner.vy>`_, `0x67a0213310202DBc2cbE788f4349B72fbA90f9Fa <https://etherscan.io/address/0x67a0213310202dbc2cbe788f4349b72fba90f9fa>`_
@@ -259,7 +255,6 @@ Here is a list of all burner contracts currently in use:
    UnderlyingBurner, `UnderlyingBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UnderlyingBurner.vy>`_, `0x786b374b5eef874279f4b7b4de16940e57301a58 <https://etherscan.io/address/0x786b374b5eef874279f4b7b4de16940e57301a58#code>`_
    UniswapBurner, `UniswapBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/UniswapBurner.vy>`_, `0xf3b64840b39121b40d8685f1576b64c157ce2e24 <https://etherscan.io/address/0xf3b64840b39121b40d8685f1576b64c157ce2e24#code>`_
    YBurner, `YBurner.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/burners/YBurner.vy>`_, `0xd16ea3e5681234da84419512eb597362135cd8c9 <https://etherscan.io/address/0xd16ea3e5681234da84419512eb597362135cd8c9#code>`_
-
 
 Pool Registry
 =============

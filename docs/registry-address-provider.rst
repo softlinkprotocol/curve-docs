@@ -95,7 +95,7 @@ View Functions
 Address IDs
 ===========
 
-* ``0``: The main :ref:`registry contract<registry-registry>`. Used to locate pools and query information about them.
+* ``0``: The main :ref:`registry contract<registry>`. Used to locate pools and query information about them.
 * ``1``: Aggregate getter methods for querying large data sets about a single pool. Designed for off-chain use.
 * ``2``: Generalized swap contract. Used for finding rates and performing exchanges.
 * ``3``: The :ref:`metapool factory<factory-deployer>`.

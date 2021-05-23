@@ -338,7 +338,7 @@ Checking and Claiming Rewards
 
     Claim all available reward tokens for ``_addr``. If no address is given, defaults to the caller.
 
-.. py:function:: LiquidityGaugeV2.claim_historic_rewards(_reward_tokens: address[MAX_REWARDS], _addr: address = msg.sender): nonpayable
+.. py:function:: LiquidityGaugeV2.claim_historic_rewards(_reward_tokens: address[8], _addr: address = msg.sender): nonpayable
 
     Claim reward tokens available from a previously-set staking contract.
 
@@ -349,7 +349,7 @@ Checking and Claiming Rewards
 Setting the Rewards Contract
 ----------------------------
 
-.. py:function:: LiquidityGaugeV2.set_rewards(_reward_contract: address, _sigs: bytes32, _reward_tokens: address[MAX_REWARDS]):
+.. py:function:: LiquidityGaugeV2.set_rewards(_reward_contract: address, _sigs: bytes32, _reward_tokens: address[8]): nonpayable
 
     Set the active reward contract.
 
@@ -407,16 +407,16 @@ Outline of modified functionality:
     5. Removal of ``claim_historic_rewards`` function.
     6. Modify ``claimable_reward`` to be a slightly less accurate view function.
     7. Reward tokens can no longer be removed once set, adding more tokens requires providing the array of reward_tokens with any new tokens appended.
-    8. :func:`deposit(_value, _to) <LiquidityGauge.deposit>` and :func:`withdraw(_value, _to) <LiquidityGauge.deposit>` functions have an additional optional argument ``_claim_rewards``, which when set to ``True`` will claim any pending rewards. 
+    8. :func:`deposit(_value, _to) <LiquidityGauge.deposit>` and :func:`withdraw(_value, _to) <LiquidityGauge.deposit>` functions have an additional optional argument ``_claim_rewards``, which when set to ``True`` will claim any pending rewards.
 
-Since this gauge maintains a similar API, below are functions which did not exist previously. Any functions not listed as modified remain the same from ``LiquidityGaugeV2``. 
+As this gauge maintains a similar API to ``LiquidityGaugeV2``, the documentation only covers functions that were added or modified since the previous version.
 
 Querying Reward Information
 ---------------------------
 
 .. py:function:: LiquidityGaugeV3.rewards_receiver(addr: address) -> address: view
 
-    This gauge implementation allows for the redirection of claimed rewards to alternative accounts. If an account has enabled a default rewards receiver this function will return that default account, otherwise it'll return ``ZERO_ADDRESS``. 
+    This gauge implementation allows for the redirection of claimed rewards to alternative accounts. If an account has enabled a default rewards receiver this function will return that default account, otherwise it'll return ``ZERO_ADDRESS``.
 
 .. py:function:: LiquidityGaugeV3.last_claim() -> uint256: view
 
@@ -427,7 +427,7 @@ Checking and Claiming Rewards
 
 .. note::
 
-    Rewards are not claimed automatically each time a user performs an action on the gauge.
+    Unlike ``LiquidityGaugeV2``, rewards are **not** automatically claimed each time a user performs an action on the gauge.
 
 .. py:function:: LiquidityGaugeV3.claim_rewards(_addr: address = msg.sender, _receiver: address = ZERO_ADDRESS): nonpayable
 
@@ -440,8 +440,8 @@ Checking and Claiming Rewards
 .. py:function:: LiquidityGaugeV3.claimable_reward(_addr: address, _token: address) -> uint256: view
 
     Get the number of claimable reward tokens for a user
-    
-    .. note:: This call does not consider pending claimable amount in `reward_contract`. Off-chain callers should instead use :func:`claimable_reward_write<LiquidityGaugeV3.claimable_reward_write>`. as a view method.
+
+    .. note:: This call does not consider pending claimable amount in ``reward_contract``. Off-chain callers should instead use :func:`claimable_reward_write<LiquidityGaugeV3.claimable_reward_write>` as a view method.
 
 .. py:function:: LiquidityGaugeV3.claimable_reward_write(_addr: address, _token: address) -> uint256: nonpayable
 

@@ -274,7 +274,7 @@ Claiming Rewards
 LiquidityGaugeV2
 ================
 
-The v2 liquidity gauge is the actively used gauge for new pools. It adds a full ERC20 interface to the gauge, tokenizing deposits so they can be directly transferred between accounts without having to withdraw and redeposit. It also improves flexibility for onward staking, allowing staking to be enabled or disabled at any time and handling up to eight reward tokens at once.
+The v2 liquidity gauge is adds a full ERC20 interface to the gauge, tokenizing deposits so they can be directly transferred between accounts without having to withdraw and redeposit. It also improves flexibility for onward staking, allowing staking to be enabled or disabled at any time and handling up to eight reward tokens at once.
 
 Querying Reward Information
 ---------------------------
@@ -338,7 +338,7 @@ Checking and Claiming Rewards
 
     Claim all available reward tokens for ``_addr``. If no address is given, defaults to the caller.
 
-.. py:function:: LiquidityGaugeV2.claim_historic_rewards(_reward_tokens: address[MAX_REWARDS], _addr: address = msg.sender): nonpayable
+.. py:function:: LiquidityGaugeV2.claim_historic_rewards(_reward_tokens: address[8], _addr: address = msg.sender): nonpayable
 
     Claim reward tokens available from a previously-set staking contract.
 
@@ -349,7 +349,7 @@ Checking and Claiming Rewards
 Setting the Rewards Contract
 ----------------------------
 
-.. py:function:: LiquidityGaugeV2.set_rewards(_reward_contract: address, _sigs: bytes32, _reward_tokens: address[MAX_REWARDS]):
+.. py:function:: LiquidityGaugeV2.set_rewards(_reward_contract: address, _sigs: bytes32, _reward_tokens: address[8]): nonpayable
 
     Set the active reward contract.
 
@@ -392,6 +392,60 @@ Setting the Rewards Contract
 
             # now we are ready to set the rewards contract
             >>> gauge.set_rewards(rewards, sigs, [reward_token] + [ZERO_ADDRESS] * 7, {'from': alice})
+
+LiquidityGaugeV3
+================
+
+``LiquidityGaugeV3`` is the current iteration of liquidity gauge used for curve pools on Ethereum mainnet. It retains a majority of ``LiquidityGaugeV2``'s functionality such as tokenized deposits, and flexible onward staking with up to 8 reward tokens with some modifications.
+
+Outline of modified functionality:
+
+    1. Ability to redirect claimed rewards to an alternative account.
+    2. Opt-in claiming of rewards on interactions with the gauge, instead of auto-claiming.
+    3. Retrieving rewards from the reward contract happens at a minimum of once an hour, for reduced gas costs.
+    4. Expose the amount of claimed and claimable rewards for users.
+    5. Removal of ``claim_historic_rewards`` function.
+    6. Modify ``claimable_reward`` to be a slightly less accurate view function.
+    7. Reward tokens can no longer be removed once set, adding more tokens requires providing the array of reward_tokens with any new tokens appended.
+    8. :func:`deposit(_value, _to) <LiquidityGauge.deposit>` and :func:`withdraw(_value, _to) <LiquidityGauge.deposit>` functions have an additional optional argument ``_claim_rewards``, which when set to ``True`` will claim any pending rewards.
+
+As this gauge maintains a similar API to ``LiquidityGaugeV2``, the documentation only covers functions that were added or modified since the previous version.
+
+Querying Reward Information
+---------------------------
+
+.. py:function:: LiquidityGaugeV3.rewards_receiver(addr: address) -> address: view
+
+    This gauge implementation allows for the redirection of claimed rewards to alternative accounts. If an account has enabled a default rewards receiver this function will return that default account, otherwise it'll return ``ZERO_ADDRESS``.
+
+.. py:function:: LiquidityGaugeV3.last_claim() -> uint256: view
+
+    The epoch timestamp of the last call to claim from :func:`reward_contract<LiquidityGaugeV3.reward_contract>`.
+
+Checking and Claiming Rewards
+-----------------------------
+
+.. note::
+
+    Unlike ``LiquidityGaugeV2``, rewards are **not** automatically claimed each time a user performs an action on the gauge.
+
+.. py:function:: LiquidityGaugeV3.claim_rewards(_addr: address = msg.sender, _receiver: address = ZERO_ADDRESS): nonpayable
+
+    Claim all available reward tokens for ``_addr``. If no address is given, defaults to the caller. If the ``_receiver`` argument is provided rewards will be distributed to the address specified (caller must be ``_addr`` in this case). If the ``_receiver`` argument is not provided, rewards are sent to the default receiver for the account if one is set.
+
+.. py:function:: LiquidityGaugeV3.claimed_reward(_addr: address, _token: address) -> uint256: view
+
+    Get the number of already claimed reward tokens for a user.
+
+.. py:function:: LiquidityGaugeV3.claimable_reward(_addr: address, _token: address) -> uint256: view
+
+    Get the number of claimable reward tokens for a user
+
+    .. note:: This call does not consider pending claimable amount in ``reward_contract``. Off-chain callers should instead use :func:`claimable_reward_write<LiquidityGaugeV3.claimable_reward_write>` as a view method.
+
+.. py:function:: LiquidityGaugeV3.claimable_reward_write(_addr: address, _token: address) -> uint256: nonpayable
+
+    Get the number of claimable reward tokens for a user. This function should be manually changed to "view" in the ABI. Calling it via a transaction will checkpoint a user's rewards updating the value of :func:`claimable_reward<LiquidityGaugeV3.claimable_reward>`. This function does not claim/distribute pending rewards for a user.
 
 GaugeController
 ===============

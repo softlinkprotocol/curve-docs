@@ -24,6 +24,7 @@ Curve
     Overview <dao-overview.rst>
     Vote-Escrowed CRV <dao-vecrv.rst>
     Liquidity Gauges and Minting CRV <dao-gauges.rst>
+    Gauges for EVM Sidechains <dao-gauges-sidechain.rst>
     Fee Collection and Distribution <dao-fees.rst>
     Governance and Voting <dao-voting.rst>
     Ownership Proxies <dao-ownership.rst>

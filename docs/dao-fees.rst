@@ -8,7 +8,7 @@ Curve exchange contracts have the capability to charge an "admin fee", claimable
 
 For exchanges the fee is taken in the output currency and calculated against the final amount received. For example, if swapping from USDT to USDC, the fee is taken in USDC.
 
-Liquidity providers also incur fees when adding or removing liquidity. The fee is applied such that, for example, a swap between USDC and USDT would pay roughly the same amount of fees as depositing USDC into the pool and then withdrawing USDT. The only case where a fee is not applied on withdrawal is when removing liquidity via :ref:`remove_liquidity<StableSwap.remove_liquidity>`, as this method does not change the imbalance of the pool in any way.
+Liquidity providers also incur fees when adding or removing liquidity. The fee is applied such that, for example, a swap between USDC and USDT would pay roughly the same amount of fees as depositing USDC into the pool and then withdrawing USDT. The only case where a fee is not applied on withdrawal is when removing liquidity via :func:`remove_liquidity<StableSwap.remove_liquidity>`, as this method does not change the imbalance of the pool in any way.
 
 Exchange contracts are indirectly owned by the Curve DAO via a :ref:`proxy ownership contract<dao-ownership-pool-proxy>`. This contract includes functionality to withdraw the fees, convert them to `3CRV <https://etherscan.io/token/0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490>`_, and forward them into the fee distributor contract. Collectively, this process is referred to as "burning".
 
@@ -19,7 +19,7 @@ Exchange contracts are indirectly owned by the Curve DAO via a :ref:`proxy owner
 Withdrawing Admin Fees
 ======================
 
-Admin fees are stored within each exchange contract and viewable via the :ref:`admin_balances<StableSwap.admin_balances>` public getter method. The contract owner may call to claim the fees at any time using :ref:`withdraw_admin_fees<StableSwap.withdraw_admin_fees>`. Most pools also include a function to donate pending fees to liquidity providers via :ref:`donate_admin_fees<StableSwap.donate_admin_fees>`.
+Admin fees are stored within each exchange contract and viewable via the :func:`admin_balances<StableSwap.admin_balances>` public getter method. The contract owner may call to claim the fees at any time using :func:`withdraw_admin_fees<StableSwap.withdraw_admin_fees>`. Most pools also include a function to donate pending fees to liquidity providers via :func:`donate_admin_fees<StableSwap.donate_admin_fees>`.
 
 Fees are initially claimed via :func:`PoolProxy.withdraw_many<PoolProxy.withdraw_many>`. This withdraws fees from many pools at once, pulling them into the ``PoolProxy`` contract.
 
@@ -74,7 +74,7 @@ SynthBurner
 
 The synth burner is used to convert non-USD denominated assets into sUSD. This is accomplished via synth conversion, the same mechanism used in :ref:`cross-asset swaps<cross-asset-swaps>`.
 
-When the synth burner is called to burn a non-synthetic asset, it uses :ref:`RegistrySwap.exchange_with_best_rate<Swaps.exchange_with_best_rate>` to swap into a related synth. If no direct path to a synth is avaialble, a swap is made into an intermediate asset.
+When the synth burner is called to burn a non-synthetic asset, it uses :func:`RegistrySwap.exchange_with_best_rate<Swaps.exchange_with_best_rate>` to swap into a related synth. If no direct path to a synth is avaialble, a swap is made into an intermediate asset.
 
 For synths, the burner first transfers to the :ref:`underlying burner<dao-fees-underlying-burner>`. Then it calls :func:`UnderlyingBurner.convert_synth<UnderlyingBurner.convert_synth>`, performing the cross-asset swap within the underlying burner. This is done to avoid requiring another transfer call after the `settlement period <https://docs.synthetix.io/integrations/settlement/>`_ has passed.
 
@@ -119,7 +119,7 @@ There is no configuration required for these burners.
 MetaBurner
 ----------
 
-The meta-burner is used for assets within metapools that can be directly swapped for 3CRV. It uses the registry's :ref:`RegistrySwap.exchange_with_best_rate<Swaps.exchange_with_best_rate>` and transfers 3CRV directly to the :ref:`fee distributor<dao-fees-distributor>`.
+The meta-burner is used for assets within metapools that can be directly swapped for 3CRV. It uses the registry's :func:`exchange_with_best_rate<Swaps.exchange_with_best_rate>` and transfers 3CRV directly to the :ref:`fee distributor<dao-fees-distributor>`.
 
 There is no configuration required for this burner.
 

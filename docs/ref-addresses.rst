@@ -335,9 +335,9 @@ Pools and Gauges
 .. csv-table::
    :header: "Name", "Source", "Address"
 
-   Aave Pool, `StableSwapAave.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/pools/aave/StableSwapAave.vy>`_, `0x445FE580eF8d70FF569aB36e80c647af338db351 <https://explorer-mainnet.maticvigil.com/address/0x445FE580eF8d70FF569aB36e80c647af338db351>`_
-   Aave LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/CurveTokenV3.vy>`_, `0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171 <https://explorer-mainnet.maticvigil.com/address/0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171>`_
-   Aave Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0xe381C25de995d62b453aF8B931aAc84fcCaa7A62 <https://explorer-mainnet.maticvigil.com/address/0xe381C25de995d62b453aF8B931aAc84fcCaa7A62>`_
+   Aave Pool, `StableSwapAave.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/pools/aave/StableSwapAave.vy>`_, `0x445FE580eF8d70FF569aB36e80c647af338db351 <https://polygonscan.com/address/0x445FE580eF8d70FF569aB36e80c647af338db351>`_
+   Aave LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/CurveTokenV3.vy>`_, `0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171 <https://polygonscan.com/address/0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171>`_
+   Aave Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0xe381C25de995d62b453aF8B931aAc84fcCaa7A62 <https://polygonscan.com/address/0xe381C25de995d62b453aF8B931aAc84fcCaa7A62>`_
 
 Rewards and Admin Fees
 **********************
@@ -345,7 +345,7 @@ Rewards and Admin Fees
 .. csv-table::
    :header: "Name", "Source", "Address"
 
-   WMATIC Distributor, `RewardStream.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/gauges/RewardStream.vy>`_, `0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0 <https://explorer-mainnet.maticvigil.com/address/0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0>`_
-   ABurner, `ABurner.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/burners/ABurner.vy>`_, `0xA237034249290De2B07988Ac64b96f22c0E76fE0 <https://explorer-mainnet.maticvigil.com/address/0xA237034249290De2B07988Ac64b96f22c0E76fE0>`_
-   Admin Fee Bridge (Polygon), `ChildBurner.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/bridge/ChildBurner.vy>`_, `0x4473243A61b5193670D1324872368d015081822f <https://explorer-mainnet.maticvigil.com/address/0x4473243A61b5193670D1324872368d015081822f>`_
+   WMATIC Distributor, `RewardStream.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/gauges/RewardStream.vy>`_, `0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0 <https://polygonscan.com/address/0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0>`_
+   ABurner, `ABurner.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/burners/ABurner.vy>`_, `0xA237034249290De2B07988Ac64b96f22c0E76fE0 <https://polygonscan.com/address/0xA237034249290De2B07988Ac64b96f22c0E76fE0>`_
+   Admin Fee Bridge (Polygon), `ChildBurner.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/bridge/ChildBurner.vy>`_, `0x4473243A61b5193670D1324872368d015081822f <https://polygonscan.com/address/0x4473243A61b5193670D1324872368d015081822f>`_
    Admin Fee Bridge (Ethereum), `RootForwarder.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/bridge/RootForwarder.vy>`_, `0x4473243A61b5193670D1324872368d015081822f <https://etherscan.io/address/0x4473243A61b5193670D1324872368d015081822f>`_

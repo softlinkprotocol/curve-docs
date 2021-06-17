@@ -173,7 +173,7 @@ Here is a list of all liquidity gauges currently in use:
    USDT, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xBC89cd85491d81C6AD2954E6d0362Ee29fCa8F53 <https://etherscan.io/address/0xBC89cd85491d81C6AD2954E6d0362Ee29fCa8F53#code>`_
    UST, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x3B7020743Bc2A4ca9EaF9D0722d42E20d6935855 <https://etherscan.io/address/0x3B7020743Bc2A4ca9EaF9D0722d42E20d6935855#code>`_
    Y, `LiquidityGauge.vy <https://github.com/curvefi/curve-contract/blob/master/contracts/gauges/LiquidityGauge.vy>`_, `0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1 <https://etherscan.io/address/0xFA712EE4788C042e2B7BB55E6cb8ec569C4530c1#code>`_
-   Yv2, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, ` 0x8101E6760130be2C8Ace79643AB73500571b7162 <https://etherscan.io/address/0x8101E6760130be2C8Ace79643AB73500571b7162#code>`_
+   Yv2, `LiquidityGaugeV2.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/LiquidityGaugeV2.vy>`_, `0x8101E6760130be2C8Ace79643AB73500571b7162 <https://etherscan.io/address/0x8101E6760130be2C8Ace79643AB73500571b7162#code>`_
 
 .. _addresses-dao:
 
@@ -350,9 +350,25 @@ Pools and Gauges
 .. csv-table::
    :header: "Name", "Source", "Address"
 
+   ATriCrypto Pool, `CurveCryptoSwapMatic.vy <https://github.com/curvefi/curve-crypto-contract/blob/master/contracts/matic/CurveCryptoSwapMatic.vy>`_, `0x751B1e21756bDbc307CBcC5085c042a0e9AaEf36 <https://polygonscan.com/address/0x751B1e21756bDbc307CBcC5085c042a0e9AaEf36>`_
+   ATriCrypto LP Token, `CurveTokenV4.vy <https://github.com/curvefi/curve-crypto-contract/blob/master/contracts/CurveTokenV4.vy>`_, `0x8096ac61db23291252574D49f036f0f9ed8ab390 <https://polygonscan.com/address/0x8096ac61db23291252574D49f036f0f9ed8ab390>`_
+   ATriCrypto Root Chain Gauge, `RootGaugePolygon.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugePolygon.vy>`_, `0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F <https://etherscan.io/address/0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F>`_
+   ATriCrypto Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F <https://polygonscan.com/address/0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F>`_
+   ATriCrypto Reward Claimer, `RewardClaimer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/RewardClaimer.vy>`_, `0x6c1d6D301595dE6AC8Db8c439025f6fe56C6dccA <https://polygonscan.com/address/0x6c1d6D301595dE6AC8Db8c439025f6fe56C6dccA>`_
+   ATriCrypto Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0xe0BF7E416e0C681b865C157F3d00B3A7DE0a78AD <https://polygonscan.com/address/0xe0BF7E416e0C681b865C157F3d00B3A7DE0a78AD>`_
    Aave Pool, `StableSwapAave.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/pools/aave/StableSwapAave.vy>`_, `0x445FE580eF8d70FF569aB36e80c647af338db351 <https://polygonscan.com/address/0x445FE580eF8d70FF569aB36e80c647af338db351>`_
    Aave LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/CurveTokenV3.vy>`_, `0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171 <https://polygonscan.com/address/0xE7a24EF0C5e95Ffb0f6684b813A78F2a3AD7D171>`_
+   Aave Root Chain Gauge, `RootGaugePolygon.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugePolygon.vy>`_, `0xC48f4653dd6a9509De44c92beb0604BEA3AEe714 <https://etherscan.io/address/0xC48f4653dd6a9509De44c92beb0604BEA3AEe714>`_
+   Aave Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0xC48f4653dd6a9509De44c92beb0604BEA3AEe714 <https://polygonscan.com/address/0xC48f4653dd6a9509De44c92beb0604BEA3AEe714>`_
+   Aave Reward Claimer, `RewardClaimer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/RewardClaimer.vy>`_, `0xdeC8B513e1570985C8f2ab09529DB6b3ee5aF240 <https://polygonscan.com/address/0xdeC8B513e1570985C8f2ab09529DB6b3ee5aF240>`_
    Aave Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0xe381C25de995d62b453aF8B931aAc84fcCaa7A62 <https://polygonscan.com/address/0xe381C25de995d62b453aF8B931aAc84fcCaa7A62>`_
+   renBTC Pool, `StableSwapREN.vy <https://github.com/skellet0r/curve-contract-polygon/blob/master/contracts/pools/ren/StableSwapREN.vy>`_, `0xC2d95EEF97Ec6C17551d45e77B590dc1F9117C67 <https://polygonscan.com/address/0xC2d95EEF97Ec6C17551d45e77B590dc1F9117C67>`_
+   renBTC LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/CurveTokenV3.vy>`_, `0xf8a57c1d3b9629b77b6726a042ca48990A84Fb49 <https://polygonscan.com/address/0xf8a57c1d3b9629b77b6726a042ca48990A84Fb49>`_
+   renBTC Root Chain Gauge, `RootGaugePolygon.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugePolygon.vy>`_, `0x488E6ef919C2bB9de535C634a80afb0114DA8F62 <https://etherscan.io/address/0x488E6ef919C2bB9de535C634a80afb0114DA8F62>`_
+   renBTC Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0x488E6ef919C2bB9de535C634a80afb0114DA8F62 <https://polygonscan.com/address/0x488E6ef919C2bB9de535C634a80afb0114DA8F62>`_
+   renBTC Reward Claimer, `RewardClaimer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/RewardClaimer.vy>`_, `0x7b88e88D5aE71c4aCdAb0f42D925a56BC3f67862 <https://polygonscan.com/address/0x7b88e88D5aE71c4aCdAb0f42D925a56BC3f67862>`_
+   renBTC Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0x93B14f53528a59E655d8Ce39bdba443DcDdddc4c <https://polygonscan.com/address/0x93B14f53528a59E655d8Ce39bdba443DcDdddc4c>`_
+
 
 Rewards and Admin Fees
 **********************

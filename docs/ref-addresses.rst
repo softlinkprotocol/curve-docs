@@ -380,3 +380,30 @@ Rewards and Admin Fees
    ABurner, `ABurner.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/burners/ABurner.vy>`_, `0xA237034249290De2B07988Ac64b96f22c0E76fE0 <https://polygonscan.com/address/0xA237034249290De2B07988Ac64b96f22c0E76fE0>`_
    Admin Fee Bridge (Polygon), `ChildBurner.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/bridge/ChildBurner.vy>`_, `0x4473243A61b5193670D1324872368d015081822f <https://polygonscan.com/address/0x4473243A61b5193670D1324872368d015081822f>`_
    Admin Fee Bridge (Ethereum), `RootForwarder.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/bridge/RootForwarder.vy>`_, `0x4473243A61b5193670D1324872368d015081822f <https://etherscan.io/address/0x4473243A61b5193670D1324872368d015081822f>`_
+
+Fantom
+-------
+
+Curve has several contracts deployed on `Fantom <https://fantom.foundation/>`_. UI for these contracts is available at `ftm.curve.fi <https://ftm.curve.fi>`_.
+
+Pools and Gauges
+****************
+
+.. csv-table::
+   :header: "Name", "Source", "Address"
+
+   2Pool Pool, `StableSwap2Pool.vy <https://github.com/curvefi/curve-contract-fantom/blob/master/contracts/pools/2pool/StableSwap2Pool.vy>`_, `0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40 <https://ftmscan.com/address/0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40>`_
+   2Pool LP Token, `StableSwap2Pool.vy <https://github.com/curvefi/curve-contract-fantom/blob/master/contracts/pools/2pool/StableSwap2Pool.vy>`_, `0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40 <https://ftmscan.com/address/0x27E611FD27b276ACbd5Ffd632E5eAEBEC9761E40>`_
+   2Pool Root Chain Gauge, `RootGaugeAnyswap.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugeAnyswap.vy>`_, `0xb9C05B8EE41FDCbd9956114B3aF15834FDEDCb54 <https://etherscan.io/address/0xb9C05B8EE41FDCbd9956114B3aF15834FDEDCb54>`_
+   2Pool Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0xb9C05B8EE41FDCbd9956114B3aF15834FDEDCb54 <https://ftmscan.com/address/0xb9C05B8EE41FDCbd9956114B3aF15834FDEDCb54>`_
+   2Pool Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0x0a53FaDa2d943057C47A301D25a4D9b3B8e01e8E <https://ftmscan.com/address/0x0a53FaDa2d943057C47A301D25a4D9b3B8e01e8E>`_
+   fUSDT Pool, `StableSwapFUSDT.vy <https://github.com/curvefi/curve-contract-fantom/blob/master/contracts/pools/fusdt/StableSwapFUSDT.vy>`_, `0x92D5ebF3593a92888C25C0AbEF126583d4b5312E <https://ftmscan.com/address/0x92D5ebF3593a92888C25C0AbEF126583d4b5312E>`_
+   fUSDT LP Token, `StableSwap2Pool.vy <https://github.com/curvefi/curve-contract-fantom/blob/master/contracts/pools/2pool/StableSwap2Pool.vy>`_, `0x92D5ebF3593a92888C25C0AbEF126583d4b5312E <https://ftmscan.com/address/0x92D5ebF3593a92888C25C0AbEF126583d4b5312E>`_
+   fUSDT Root Chain Gauge, `RootGaugeAnyswap.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugeAnyswap.vy>`_, `0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310 <https://etherscan.io/address/0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310>`_
+   fUSDT Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310 <https://ftmscan.com/address/0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310>`_
+   fUSDT Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0x4f3E8F405CF5aFC05D68142F3783bDfE13811522 <https://ftmscan.com/address/0x4f3E8F405CF5aFC05D68142F3783bDfE13811522>`_
+   renBTC Pool, `StableSwapREN.vy <https://github.com/skellet0r/curve-contract-polygon/blob/master/contracts/pools/ren/StableSwapREN.vy>`_, `0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604 <https://ftmscan.com/address/0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604>`_
+   renBTC LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/CurveTokenV3.vy>`_, `0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858 <https://ftmscan.com/address/0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858>`_
+   renBTC Root Chain Gauge, `RootGaugeAnyswap.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugeAnyswap.vy>`_, `0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281 <https://etherscan.io/address/0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281>`_
+   renBTC Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281 <https://ftmscan.com/address/0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281>`_
+   renBTC Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0x2db0E83599a91b508Ac268a6197b8B14F5e72840 <https://ftmscan.com/address/0x2db0E83599a91b508Ac268a6197b8B14F5e72840>`_

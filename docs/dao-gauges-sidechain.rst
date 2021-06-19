@@ -79,3 +79,8 @@ RewardsOnlyGauge
 ``RewardsOnlyGauge`` is a simplified version of the same gauge contract used on Ethereum. The logic around CRV emissions and minting has been removed - it only deals with distribution of externally received rewards.
 
 The API for this contract is similar to that of ``LiquidityGaugeV3``.
+
+RewardClaimer
+=============
+
+``RewardClaimer`` is a minimal passthrough contract that allows claiming from multiple reward streamers. For example the am3CRV pool on Polygon utilizes this contract to receive both CRV emissions bridged across from Ethereum, as well as WMATIC rewards supplied via a ``RewardStreamer`` contract. The ``RewardsOnlyGauge`` calls the ``RewardClaimer`` as a way to retrieve both the CRV and WMATIC rewards.

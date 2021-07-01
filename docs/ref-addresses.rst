@@ -408,8 +408,25 @@ Pools and Gauges
    fUSDT Root Chain Gauge, `RootGaugeAnyswap.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugeAnyswap.vy>`_, `0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310 <https://etherscan.io/address/0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310>`_
    fUSDT Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310 <https://ftmscan.com/address/0xfE1A3dD8b169fB5BF0D5dbFe813d956F39fF6310>`_
    fUSDT Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0x06e3C4da96fd076b97b7ca3Ae23527314b6140dF <https://ftmscan.com/address/0x06e3C4da96fd076b97b7ca3Ae23527314b6140dF>`_
-   renBTC Pool, `StableSwapREN.vy <https://github.com/skellet0r/curve-contract-polygon/blob/master/contracts/pools/ren/StableSwapREN.vy>`_, `0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604 <https://ftmscan.com/address/0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604>`_
-   renBTC LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-polygon/blob/master/contracts/CurveTokenV3.vy>`_, `0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858 <https://ftmscan.com/address/0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858>`_
+   renBTC Pool, `StableSwapREN.vy <https://github.com/skellet0r/curve-contract-fantom/blob/master/contracts/pools/ren/StableSwapREN.vy>`_, `0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604 <https://ftmscan.com/address/0x3eF6A01A0f81D6046290f3e2A8c5b843e738E604>`_
+   renBTC LP Token, `CurveTokenV3.vy <https://github.com/curvefi/curve-contract-fantom/blob/master/contracts/CurveTokenV3.vy>`_, `0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858 <https://ftmscan.com/address/0x5B5CFE992AdAC0C9D48E05854B2d91C73a003858>`_
    renBTC Root Chain Gauge, `RootGaugeAnyswap.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugeAnyswap.vy>`_, `0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281 <https://etherscan.io/address/0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281>`_
    renBTC Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281 <https://ftmscan.com/address/0xfDb129ea4b6f557b07BcDCedE54F665b7b6Bc281>`_
    renBTC Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0 <https://ftmscan.com/address/0xBdFF0C27dd073C119ebcb1299a68A6A92aE607F0>`_
+
+XDai
+----
+
+Curve has several contracts deployed on `XDai <https://www.xdaichain.com//>`_. UI for these contracts is available at `xdai.curve.fi <https://xdai.curve.fi>`_.
+
+Pools and Gauges
+****************
+
+.. csv-table::
+   :header: "Name", "Source", "Address"
+
+   x3Pool Pool, `StableSwap3Pool.vy <https://github.com/curvefi/curve-contract-xdai/blob/master/contracts/pools/2pool/StableSwap3Pool.vy>`_, `0x7f90122BF0700F9E7e1F688fe926940E8839F353 <https://blockscout.com/xdai/mainnet/address/0x7f90122BF0700F9E7e1F688fe926940E8839F353>`_
+   x3Pool LP Token, `StableSwap3Pool.vy <https://github.com/curvefi/curve-contract-xdai/blob/master/contracts/pools/2pool/StableSwap3Pool.vy>`_, `0x1337BedC9D22ecbe766dF105c9623922A27963EC <https://blockscout.com/xdai/mainnet/address/0x6C09F6727113543Fd061a721da512B7eFCDD0267>`_
+   x3Pool Root Chain Gauge, `RootGaugeAnyswap.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugeAnyswap.vy>`_, `0x6C09F6727113543Fd061a721da512B7eFCDD0267 <https://etherscan.io/address/0x6C09F6727113543Fd061a721da512B7eFCDD0267>`_
+   x3Pool Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0x6C09F6727113543Fd061a721da512B7eFCDD0267 <https://blockscout.com/xdai/mainnet/address/0x6C09F6727113543Fd061a721da512B7eFCDD0267>`_
+   x3Pool Gauge, `RewardsOnlyGauge.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/RewardsOnlyGauge.vy>`_, `0x78CF256256C8089d68Cde634Cf7cDEFb39286470 <https://blockscout.com/xdai/mainnet/address/0x78CF256256C8089d68Cde634Cf7cDEFb39286470>`_

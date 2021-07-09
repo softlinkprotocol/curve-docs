@@ -357,6 +357,7 @@ Pools and Gauges
    :header: "Name", "Source", "Address"
 
    ATriCrypto Pool, `CurveCryptoSwapMatic.vy <https://github.com/curvefi/curve-crypto-contract/blob/master/contracts/matic/CurveCryptoSwapMatic.vy>`_, `0x751B1e21756bDbc307CBcC5085c042a0e9AaEf36 <https://polygonscan.com/address/0x751B1e21756bDbc307CBcC5085c042a0e9AaEf36>`_
+   ATriCrypto Zap, `ZapAave.vy <https://github.com/curvefi/curve-crypto-contract/blob/master/contracts/matic/ZapAave.vy>`_, `0x3FCD5De6A9fC8A99995c406c77DDa3eD7E406f81 <https://polygonscan.com/address/0x3FCD5De6A9fC8A99995c406c77DDa3eD7E406f81>`_
    ATriCrypto LP Token, `CurveTokenV4.vy <https://github.com/curvefi/curve-crypto-contract/blob/master/contracts/CurveTokenV4.vy>`_, `0x8096ac61db23291252574D49f036f0f9ed8ab390 <https://polygonscan.com/address/0x8096ac61db23291252574D49f036f0f9ed8ab390>`_
    ATriCrypto Root Chain Gauge, `RootGaugePolygon.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/gauges/sidechain/RootGaugePolygon.vy>`_, `0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F <https://etherscan.io/address/0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F>`_
    ATriCrypto Child Chain Streamer, `ChildChainStreamer.vy <https://github.com/curvefi/curve-dao-contracts/blob/master/contracts/streamers/ChildChainStreamer.vy>`_, `0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F <https://polygonscan.com/address/0x060e386eCfBacf42Aa72171Af9EFe17b3993fC4F>`_

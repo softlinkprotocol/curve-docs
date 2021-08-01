@@ -33,16 +33,6 @@ At a high level, the process of CRV distribution on sidechain gauges is as follo
 
     The sidechain gauge is a simplified version of the gauges used on Ethereum. It handles CRV as though it were any other 3rd-party reward token, evenly distributing between stakers based on the deposited balances as the time the token is received.
 
-Sidechain Gauge Types
-=====================
-
-Each sidechain where Curve operates is assigned a unique gauge type. By grouping gauges in this way, the Curve DAO may choose to end emissions for a specific sidechain by voting a type weight of zero to that sidechain's gauge type.
-
-The gauge types are as follows:
-
-   * Fantom: ``1``
-   * Polygon (Matic): ``2``
-
 RootChainGauge
 ==============
 

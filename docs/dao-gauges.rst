@@ -82,6 +82,22 @@ when voting power gets to 0 at lock expiration for some of users.
 
 When a user changes their gauge weight vote, the change is scheduled for the next epoch week, not immediately. This reduces the number of reads from storage which must to be performed by each user: it is proportional to the number of weeks since the last change rather than the number of interactions from other users.
 
+Gauge Types
+===========
+
+Each liquidity gauge is assigned a type within the gauge controller. Grouping gauges by type allows the DAO to adjust the emissions according to type, making it possible to e.g. end all emissions for a single type.
+
+Currently active gauge types are as follows:
+
+   * Ethereum: ``0``
+   * Fantom: ``1``
+   * Polygon (Matic): ``2``
+   * xDai: ``4``
+   * Crypto Pools: ``5``
+
+Type ``3`` has been deprecated.
+
+
 .. _dao-gauges-liquidity-gauge:
 
 LiquidityGauge

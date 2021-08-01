@@ -321,6 +321,14 @@ Pool Metadata
         >>> registry.get_pool_asset_type('0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956')
         0
 
+    Asset types are as follows:
+
+        * ``0``: USD
+        * ``1``: BTC
+        * ``2``: ETH
+        * ``3``: Other StableSwap
+        * ``4``: CryptoSwap
+
 Gauges
 ------
 

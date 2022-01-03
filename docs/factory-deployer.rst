@@ -4,9 +4,9 @@
 Metapool Factory: Deployer and Registry
 =======================================
 
-The ``Factory`` contract is used to deploy new Curve pools and to find existing ones. It is deployed to the mainnet at the following address:
+The ``Factory`` contract is used to deploy new Curve pools and to find existing ones.  The most up to date factory address may be retrieved by calling ``get_address(3)`` in the Address Provider contract.  As of early 2022, the factory is deployed to the mainnet at the following address:
 
-    `0x0959158b6040D32d04c301A72CBFD6b39E21c9AE <https://etherscan.io/address/0x0959158b6040D32d04c301A72CBFD6b39E21c9AE>`_
+    `0xB9fC157394Af804a3578134A6585C0dc9cc990d4 <https://etherscan.io/address/0xB9fC157394Af804a3578134A6585C0dc9cc990d4>`_
 
 Source code for this contract is may be viewed on `Github <https://github.com/curvefi/curve-factory/blob/master/contracts/Factory.vy>`_.
 

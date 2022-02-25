@@ -11,7 +11,7 @@ Source code for this contract is available on `Github <https://github.com/curvef
 How it Works
 ============
 
-The address provider is deployed to the Ethereum mainnet at:
+The address provider is deployed to the same address on Ethereum and all sidechains/L2's where Curve is active. The deployment address is:
 
     `0x0000000022D53366457F9d5E68Ec105046FC4383 <https://etherscan.io/address/0x0000000022d53366457f9d5e68ec105046fc4383>`_
 
@@ -95,8 +95,12 @@ View Functions
 Address IDs
 ===========
 
+Note that not all contracts are available on all sidechains.
+
 * ``0``: The main :ref:`registry contract<registry>`. Used to locate pools and query information about them.
 * ``1``: Aggregate getter methods for querying large data sets about a single pool. Designed for off-chain use.
 * ``2``: Generalized swap contract. Used for finding rates and performing exchanges.
 * ``3``: The :ref:`metapool factory<factory-deployer>`.
 * ``4``: The :ref:`fee distributor<dao-fees-distributor>`. Used to distribute collected fees to veCRV holders.
+* ``5``: The cryptoswap registry contract. Used to locate and query information about pools for uncorrelated assets.
+* ``6``: The cryptoswap factory.

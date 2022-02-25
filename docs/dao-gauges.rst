@@ -89,13 +89,16 @@ Each liquidity gauge is assigned a type within the gauge controller. Grouping ga
 
 Currently active gauge types are as follows:
 
-   * Ethereum: ``0``
+   * Ethereum (stableswap pools): ``0``
    * Fantom: ``1``
    * Polygon (Matic): ``2``
    * xDai: ``4``
-   * Crypto Pools: ``5``
+   * Ethereum (crypto pools): ``5``
+   * Arbitrum ``7``
+   * Avalanche ``8``
+   * Harmony ``9``
 
-Type ``3`` has been deprecated.
+Types ``3`` and ``6`` have been deprecated.
 
 
 .. _dao-gauges-liquidity-gauge:

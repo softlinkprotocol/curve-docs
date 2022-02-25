@@ -6,7 +6,7 @@ Metapool Factory: Deployer and Registry
 
 The ``Factory`` contract is used to deploy new Curve pools and to find existing ones. It is deployed to the mainnet at the following address:
 
-    `0x0959158b6040D32d04c301A72CBFD6b39E21c9AE <https://etherscan.io/address/0x0959158b6040D32d04c301A72CBFD6b39E21c9AE>`_
+    `0xB9fC157394Af804a3578134A6585C0dc9cc990d4 <https://etherscan.io/address/0xB9fC157394Af804a3578134A6585C0dc9cc990d4>`_
 
 Source code for this contract is may be viewed on `Github <https://github.com/curvefi/curve-factory/blob/master/contracts/Factory.vy>`_.
 
@@ -34,7 +34,7 @@ Deploying a Pool
 
         .. code-block:: python
 
-            >>> factory = Contract('0x0959158b6040D32d04c301A72CBFD6b39E21c9AE')
+            >>> factory = Contract('0xB9fC157394Af804a3578134A6585C0dc9cc990d4')
             >>> esd = Contract('0x36F3FD68E7325a35EB768F1AedaAe9EA0689d723')
             >>> threepool = Contract('0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7')
 

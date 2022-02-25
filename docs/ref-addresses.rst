@@ -304,7 +304,7 @@ The metapool factory allows for the permissionless deployment of Curve metapools
 .. csv-table::
    :header: "Name", "Source", "Address"
 
-   Factory, `Factory.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/Factory.vy>`_, `0x0959158b6040D32d04c301A72CBFD6b39E21c9AE <https://etherscan.io/address/0x0959158b6040D32d04c301A72CBFD6b39E21c9AE>`_
+   Factory, `Factory.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/Factory.vy>`_, `0xB9fC157394Af804a3578134A6585C0dc9cc990d4 <https://etherscan.io/address/0xB9fC157394Af804a3578134A6585C0dc9cc990d4>`_
    Migrator, `PoolMigrator.vy <https://github.com/curvefi/curve-factory/blob/master/contracts/PoolMigrator.vy>`_, `0xd6930b7f661257DA36F93160149b031735237594 <https://etherscan.io/address/0xd6930b7f661257DA36F93160149b031735237594>`_
 
 

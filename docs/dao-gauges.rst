@@ -97,6 +97,7 @@ Currently active gauge types are as follows:
    * Arbitrum ``7``
    * Avalanche ``8``
    * Harmony ``9``
+   * Fundraising ``10`` 
 
 Types ``3`` and ``6`` have been deprecated.
 

@@ -4,7 +4,7 @@
 Curve DAO: Protocol Ownership
 =============================
 
-The Curve DAO controls admin functionality throughout the protocol. Performing calls to to owner/admin-level functions is only possible via a successful DAO vote.
+The Curve DAO controls admin functionality throughout the protocol. Performing calls to owner/admin-level functions is only possible via a successful DAO vote.
 
 Ownership is handled via a series of proxy contracts. At a high level, the flow of ownership is:
 
